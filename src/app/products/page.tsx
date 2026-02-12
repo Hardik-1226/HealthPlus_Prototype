@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PRODUCTS } from '@/lib/products';
@@ -12,15 +12,27 @@ import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Search, ShoppingCart, Zap } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useSearchParams } from 'next/navigation';
 
-export default function ProductsPage() {
-  const [search, setSearch] = useState('');
+function ProductsContent() {
+  const searchParams = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get('search') || '');
   const { addToCart } = useCart();
   const { toast } = useToast();
 
+  useEffect(() => {
+    const query = searchParams.get('search');
+    if (query !== null) {
+      setSearch(query);
+    }
+  }, [searchParams]);
+
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter(p => {
-      return p.name.toLowerCase().includes(search.toLowerCase());
+      const query = search.toLowerCase();
+      return p.name.toLowerCase().includes(query) || 
+             p.category.toLowerCase().includes(query) ||
+             p.description.toLowerCase().includes(query);
     });
   }, [search]);
 
@@ -161,5 +173,13 @@ export default function ProductsPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div className="container mx-auto px-4 py-20 text-center font-bold text-slate-400">Loading catalog...</div>}>
+      <ProductsContent />
+    </Suspense>
   );
 }
