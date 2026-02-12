@@ -128,7 +128,7 @@ export const Navbar = () => {
               <FileDown className="h-5 w-5 text-primary" /> Brochure
             </Button>
             <Link href="/cart">
-              <Button variant="ghost" size="icon" className="relative h-16 w-16 group">
+              <Button variant="ghost" size="icon" className="relative h-16 w-16 group border-2 border-primary/30 hover:border-primary transition-all rounded-xl">
                 <ShoppingCart className="h-9 w-9 text-slate-700 group-hover:text-primary transition-colors" />
                 {cartCount > 0 && (
                   <Badge className="absolute top-0 right-0 h-8 w-8 flex items-center justify-center p-0 text-[14px] bg-accent text-accent-foreground border-2 border-white font-black rounded-full shadow-md animate-in zoom-in">
