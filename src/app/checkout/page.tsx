@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { CreditCard, ShieldCheck, ShoppingCart, Tag, ChevronDown } from 'lucide-react';
+import { CreditCard, ShieldCheck, ShoppingCart, Tag, ChevronDown, ChevronLeft, AlertCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
@@ -51,14 +51,23 @@ export default function CheckoutPage() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const validateForm = () => {
+    if (!formData.firstName || !formData.lastName) return "Please enter your full name.";
+    if (!formData.email.includes('@')) return "Please enter a valid email address.";
+    if (formData.phone.length < 10) return "Please enter a valid phone number.";
+    if (!formData.address || !formData.city || !formData.zip) return "Please complete your delivery address.";
+    return null;
+  };
+
   const handlePayment = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.address || !formData.city || !formData.zip) {
+    const error = validateForm();
+    if (error) {
       toast({
         variant: "destructive",
-        title: "Information Required",
-        description: "Please provide all required billing and contact details."
+        title: "Validation Error",
+        description: error
       });
       return;
     }
@@ -115,174 +124,149 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-10">
+    <div className="container mx-auto px-4 py-12">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-        <div className="lg:col-span-2 space-y-6">
+        <div className="lg:col-span-2 space-y-8">
           <div className="space-y-2">
-            <h1 className="text-3xl font-bold text-slate-800">Checkout</h1>
-            <p className="text-md text-slate-500 font-medium">Finalize your procurement order details.</p>
+            <Button 
+              variant="ghost" 
+              onClick={() => router.push('/cart')} 
+              className="pl-0 text-primary font-black uppercase tracking-widest text-[10px] hover:bg-transparent"
+            >
+              <ChevronLeft className="h-4 w-4 mr-1" /> Back to Basket
+            </Button>
+            <h1 className="text-4xl font-black text-slate-800 uppercase tracking-tight">Checkout</h1>
+            <p className="text-sm text-slate-500 font-medium">Please finalize your institutional procurement details.</p>
           </div>
 
-          <form onSubmit={handlePayment} className="space-y-8">
-            <Card className="border shadow-lg rounded-[2rem] overflow-hidden bg-white">
-              <CardHeader className="p-8 pb-4">
-                <CardTitle className="text-2xl font-bold text-slate-800">Billing address</CardTitle>
+          <form onSubmit={handlePayment} className="space-y-10">
+            <Card className="border shadow-2xl rounded-[3rem] overflow-hidden bg-white">
+              <CardHeader className="p-10 pb-4">
+                <CardTitle className="text-2xl font-black text-slate-800 uppercase tracking-tight">Billing Address</CardTitle>
               </CardHeader>
-              <CardContent className="p-8 pt-0 space-y-6">
+              <CardContent className="p-10 pt-0 space-y-8">
                 {/* Names */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName" className="text-sm font-semibold text-slate-700">First name</Label>
-                    <Input id="firstName" name="firstName" required value={formData.firstName} onChange={handleInputChange} placeholder="Raj" className="h-12 rounded-xl bg-slate-50/50" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                    <Label htmlFor="firstName" className="text-[10px] font-black uppercase tracking-widest text-slate-500">First Name</Label>
+                    <Input id="firstName" name="firstName" required value={formData.firstName} onChange={handleInputChange} placeholder="Raj" className="h-14 rounded-2xl bg-slate-50 border-slate-100 focus:bg-white transition-all" />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName" className="text-sm font-semibold text-slate-700">Last name</Label>
-                    <Input id="lastName" name="lastName" required value={formData.lastName} onChange={handleInputChange} placeholder="Singh" className="h-12 rounded-xl bg-slate-50/50" />
+                  <div className="space-y-3">
+                    <Label htmlFor="lastName" className="text-[10px] font-black uppercase tracking-widest text-slate-500">Last Name</Label>
+                    <Input id="lastName" name="lastName" required value={formData.lastName} onChange={handleInputChange} placeholder="Singh" className="h-14 rounded-2xl bg-slate-50 border-slate-100 focus:bg-white transition-all" />
                   </div>
                 </div>
 
                 {/* Contact */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-sm font-semibold text-slate-700">Email address</Label>
-                    <Input id="email" name="email" type="email" required value={formData.email} onChange={handleInputChange} placeholder="rajsing@example.com" className="h-12 rounded-xl bg-slate-50/50" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                    <Label htmlFor="email" className="text-[10px] font-black uppercase tracking-widest text-slate-500">Email Address</Label>
+                    <Input id="email" name="email" type="email" required value={formData.email} onChange={handleInputChange} placeholder="rajsingh@example.com" className="h-14 rounded-2xl bg-slate-50 border-slate-100 focus:bg-white transition-all" />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-sm font-semibold text-slate-700">Phone number</Label>
-                    <Input id="phone" name="phone" type="tel" required value={formData.phone} onChange={handleInputChange} placeholder="+91 92669 03156" className="h-12 rounded-xl bg-slate-50/50" />
+                  <div className="space-y-3">
+                    <Label htmlFor="phone" className="text-[10px] font-black uppercase tracking-widest text-slate-500">Phone Number</Label>
+                    <Input id="phone" name="phone" type="tel" required value={formData.phone} onChange={handleInputChange} placeholder="+91 92669 03156" className="h-14 rounded-2xl bg-slate-50 border-slate-100 focus:bg-white transition-all" />
                   </div>
                 </div>
 
                 {/* Geography */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="space-y-2">
-                    <Label className="text-sm font-semibold text-slate-700">Country</Label>
-                    <div className="flex h-12 w-full items-center justify-between rounded-xl border bg-slate-50/50 px-4 py-2 text-sm">
-                       <span className="flex items-center gap-2 font-medium">🇮🇳 India</span>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="space-y-3">
+                    <Label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Country</Label>
+                    <div className="flex h-14 w-full items-center justify-between rounded-2xl border border-slate-100 bg-slate-50 px-5 py-2 text-sm font-bold">
+                       <span className="flex items-center gap-2">🇮🇳 India</span>
                        <ChevronDown className="h-4 w-4 text-slate-400" />
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="state" className="text-sm font-semibold text-slate-700">State/Province</Label>
-                    <Input id="state" name="state" required value={formData.state} onChange={handleInputChange} placeholder="Haryana" className="h-12 rounded-xl bg-slate-50/50" />
+                  <div className="space-y-3">
+                    <Label htmlFor="state" className="text-[10px] font-black uppercase tracking-widest text-slate-500">State/Province</Label>
+                    <Input id="state" name="state" required value={formData.state} onChange={handleInputChange} placeholder="Haryana" className="h-14 rounded-2xl bg-slate-50 border-slate-100 focus:bg-white transition-all" />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="zip" className="text-sm font-semibold text-slate-700">Postal code</Label>
-                    <Input id="zip" name="zip" required value={formData.zip} onChange={handleInputChange} placeholder="121013" className="h-12 rounded-xl bg-slate-50/50" />
+                  <div className="space-y-3">
+                    <Label htmlFor="zip" className="text-[10px] font-black uppercase tracking-widest text-slate-500">Postal Code</Label>
+                    <Input id="zip" name="zip" required value={formData.zip} onChange={handleInputChange} placeholder="121013" className="h-14 rounded-2xl bg-slate-50 border-slate-100 focus:bg-white transition-all" />
                   </div>
                 </div>
 
                 {/* Address and City */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="md:col-span-2 space-y-2">
-                    <Label htmlFor="address" className="text-sm font-semibold text-slate-700">Address</Label>
-                    <Input id="address" name="address" required value={formData.address} onChange={handleInputChange} placeholder="Plot No.225, Gali No. 1, Surya Vihar" className="h-12 rounded-xl bg-slate-50/50" />
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="md:col-span-2 space-y-3">
+                    <Label htmlFor="address" className="text-[10px] font-black uppercase tracking-widest text-slate-500">Street Address</Label>
+                    <Input id="address" name="address" required value={formData.address} onChange={handleInputChange} placeholder="Plot No. 225, Surya Vihar" className="h-14 rounded-2xl bg-slate-50 border-slate-100 focus:bg-white transition-all" />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="city" className="text-sm font-semibold text-slate-700">City</Label>
-                    <Input id="city" name="city" required value={formData.city} onChange={handleInputChange} placeholder="Faridabad" className="h-12 rounded-xl bg-slate-50/50" />
+                  <div className="space-y-3">
+                    <Label htmlFor="city" className="text-[10px] font-black uppercase tracking-widest text-slate-500">City</Label>
+                    <Input id="city" name="city" required value={formData.city} onChange={handleInputChange} placeholder="Faridabad" className="h-14 rounded-2xl bg-slate-50 border-slate-100 focus:bg-white transition-all" />
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row justify-end gap-4 pt-8">
-                  <Button 
-                    type="button" 
-                    variant="ghost" 
-                    onClick={() => router.push('/cart')} 
-                    className="h-14 px-10 rounded-2xl text-lg font-bold text-slate-500 hover:bg-slate-50"
-                  >
-                    Cancel
-                  </Button>
+                <div className="pt-8">
                   <Button 
                     type="submit" 
                     disabled={loading}
-                    className="h-14 px-10 rounded-2xl text-lg font-black bg-slate-900 text-white hover:bg-slate-800 shadow-xl"
+                    className="w-full h-16 rounded-full text-xs font-black uppercase tracking-[0.2em] bg-slate-900 text-white hover:bg-slate-800 shadow-2xl transition-all"
                   >
-                    {loading ? 'Processing...' : 'Continue'}
+                    {loading ? 'Processing Transaction...' : 'Complete Procurement Order'}
                   </Button>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border shadow-lg rounded-[2rem] overflow-hidden bg-white">
-              <CardHeader className="bg-primary/5 p-6">
-                <CardTitle className="flex items-center gap-2 text-xl font-bold text-slate-800">
-                  <CreditCard className="h-6 w-6 text-primary" /> Security Overview
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-8">
-                <div className="p-6 bg-primary/5 border border-primary/10 rounded-3xl flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 bg-white rounded-2xl shadow-sm flex items-center justify-center">
-                      <ShieldCheck className="h-8 w-8 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-lg text-slate-800">Secure Procurement</p>
-                      <p className="text-sm text-slate-500 font-medium">All transactions are encrypted and audited.</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="flex items-center gap-4 p-6 bg-primary/5 rounded-[2rem] border border-primary/10">
+              <ShieldCheck className="h-8 w-8 text-primary" />
+              <div>
+                <p className="font-black text-slate-800 text-sm uppercase tracking-tight">Secure Professional Transaction</p>
+                <p className="text-[10px] text-slate-500 font-medium">Your pharmaceutical data is protected by industry-standard encryption.</p>
+              </div>
+            </div>
           </form>
         </div>
 
         <div className="lg:col-span-1">
-          <Card className="sticky top-32 border shadow-xl rounded-[2.5rem] overflow-hidden bg-white">
+          <Card className="sticky top-32 border shadow-2xl rounded-[3rem] overflow-hidden bg-white">
             <CardHeader className="bg-slate-800 p-8">
-              <CardTitle className="flex items-center gap-2 text-xl font-bold text-white">
-                <ShoppingCart className="h-6 w-6" /> Order Summary
+              <CardTitle className="flex items-center gap-3 text-xl font-black text-white uppercase tracking-tight">
+                <ShoppingCart className="h-6 w-6 text-primary" /> Order Summary
               </CardTitle>
             </CardHeader>
-            <CardContent className="p-8 divide-y divide-slate-100">
-              <div className="max-h-[500px] overflow-y-auto pr-2 space-y-2 mb-6 scrollbar-hide">
+            <CardContent className="p-0">
+              <div className="max-h-[450px] overflow-y-auto p-6 md:p-8 space-y-6 scrollbar-hide">
                 {cart.map(item => (
-                  <div key={item.id} className="py-6 flex flex-col gap-4 border-b last:border-0 border-slate-50">
-                    <div className="flex justify-between gap-4 items-start">
-                      <div className="flex gap-4 items-start">
-                        <div className="relative h-20 w-20 bg-slate-50 rounded-2xl overflow-hidden shrink-0 border border-slate-100">
-                          <Image src={item.imageUrl} alt={item.name} fill className="object-cover" />
-                        </div>
-                        <div className="space-y-1">
-                          <p className="font-bold text-slate-800 text-md">{item.name}</p>
-                          <p className="text-[11px] text-slate-500 line-clamp-2 leading-relaxed font-medium">
-                            {item.description}
-                          </p>
-                          <div className="flex flex-wrap items-center gap-2 pt-2">
-                            <span className="text-sm font-black text-primary">₹{item.price.toFixed(2)}</span>
-                            <span className="text-xs text-slate-400 line-through font-bold">₹{item.mrp.toFixed(2)}</span>
-                            <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold">
-                              -{Math.round(((item.mrp - item.price) / item.mrp) * 100)}%
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="text-right shrink-0">
-                        <p className="font-black text-slate-800 text-md">₹{(item.price * item.quantity).toFixed(2)}</p>
-                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Qty: {item.quantity}</p>
+                  <div key={item.id} className="flex gap-4 items-start pb-6 border-b border-slate-50 last:border-0 last:pb-0">
+                    <div className="relative h-20 w-20 bg-slate-50 rounded-2xl overflow-hidden shrink-0 border border-slate-100">
+                      <Image src={item.imageUrl} alt={item.name} fill className="object-cover" />
+                    </div>
+                    <div className="flex-grow space-y-1">
+                      <p className="font-black text-slate-800 text-sm uppercase tracking-tight">{item.name}</p>
+                      <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Qty: {item.quantity}</p>
+                      <div className="flex items-center gap-2 pt-1">
+                        <span className="text-sm font-black text-primary">₹{(item.price * item.quantity).toFixed(2)}</span>
+                        {item.mrp > item.price && (
+                          <span className="text-[9px] text-slate-300 line-through font-bold">₹{(item.mrp * item.quantity).toFixed(2)}</span>
+                        )}
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
               
-              <div className="pt-8 space-y-4">
-                <div className="flex justify-between text-slate-400 font-bold uppercase text-[11px] tracking-widest">
-                  <span>Gross Subtotal</span>
-                  <span className="text-slate-800 text-md">₹{cartTotal.toFixed(2)}</span>
+              <div className="p-8 bg-slate-50/50 border-t border-slate-100 space-y-5">
+                <div className="flex justify-between text-slate-400 font-bold uppercase text-[10px] tracking-widest">
+                  <span>Gross Total</span>
+                  <span className="text-slate-800">₹{cartTotal.toFixed(2)}</span>
                 </div>
-                <div className="flex justify-between items-center bg-primary/5 p-4 rounded-2xl border border-primary/10">
+                <div className="flex justify-between items-center bg-white p-4 rounded-2xl border border-slate-100">
                   <div className="flex items-center gap-2">
                     <Tag className="h-4 w-4 text-primary" />
-                    <span className="text-[11px] font-bold text-primary uppercase tracking-widest">Total Savings</span>
+                    <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Total Savings</span>
                   </div>
-                  <span className="text-md font-black text-primary">
+                  <span className="text-sm font-black text-primary">
                     ₹{cart.reduce((acc, item) => acc + (item.mrp - item.price) * item.quantity, 0).toFixed(2)}
                   </span>
                 </div>
-                <Separator className="my-6" />
+                <Separator className="opacity-10" />
                 <div className="flex justify-between items-center">
-                  <span className="text-xl font-bold text-slate-800">Grand Total</span>
+                  <span className="text-lg font-black text-slate-800 uppercase tracking-tight">Net Amount</span>
                   <span className="text-3xl font-black text-primary">₹{cartTotal.toFixed(2)}</span>
                 </div>
               </div>
