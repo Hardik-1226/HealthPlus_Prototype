@@ -141,7 +141,7 @@ export default function ProductsPage() {
                     </div>
                     <Button 
                       size="icon" 
-                      className="bg-primary text-white hover:bg-primary/90 rounded-xl h-10 w-10 shadow-md"
+                      className="bg-primary text-white hover:bg-primary/90 rounded-xl h-10 w-10 shadow-md border-2 border-primary/20"
                       onClick={(e) => handleAddToCart(e, product)}
                     >
                       <ShoppingCart className="h-4 w-4" />

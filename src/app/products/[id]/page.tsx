@@ -170,7 +170,7 @@ export default function ProductDetailsPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="flex-1 h-14 text-lg bg-primary text-white hover:bg-primary/90 rounded-full font-black shadow-lg"
+                className="flex-1 h-14 text-lg bg-primary text-white hover:bg-primary/90 rounded-full font-black shadow-lg border-4 border-primary/20"
                 onClick={handleAddToCart}
               >
                 <ShoppingCart className="h-5 w-5 mr-2" /> Add to Basket
