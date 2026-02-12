@@ -101,31 +101,31 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 bg-white relative z-20">
+      <section className="py-20 bg-white relative z-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 md:pl-16">
+            <div className="space-y-8 md:pl-16">
               <div className="inline-block">
-                <h2 className="text-3xl font-bold text-slate-800 relative">
+                <h2 className="text-4xl font-bold text-slate-800 relative">
                   About Health Plus Innovation
-                  <span className="absolute -bottom-2 left-0 w-20 h-1 bg-primary rounded-full" />
+                  <span className="absolute -bottom-2 left-0 w-24 h-1.5 bg-primary rounded-full" />
                 </h2>
               </div>
-              <p className="text-md text-slate-600 leading-relaxed text-justify">
+              <p className="text-lg text-slate-600 leading-relaxed text-justify">
                 <span className="font-bold text-slate-800">Health Plus Innovation Pvt. Ltd.</span> is a pharmaceutical company founded in 2020 with a strong commitment to improving healthcare through <span className="font-bold text-primary">safe, reliable, and innovative medicines</span>. We focus on providing high-quality pharmaceutical products to hospitals, clinics, and healthcare professionals across India.
               </p>
-              <p className="text-md text-slate-600 leading-relaxed text-justify">
+              <p className="text-lg text-slate-600 leading-relaxed text-justify">
                 What makes <span className="font-bold text-slate-800">Health Plus Innovation</span> different is our focus on <span className="font-bold text-primary">trust, quality, and consistency</span>. We believe in building <span className="font-bold text-slate-800">long-term relationships</span> with healthcare providers by offering exceptional service.
               </p>
-              <div className="pt-2">
+              <div className="pt-4">
                 <Link href="/about">
-                  <Button variant="outline" className="rounded-full px-8 h-12 text-md border-primary text-primary hover:bg-primary/10 transition-all">
+                  <Button variant="outline" className="rounded-full px-10 h-14 text-lg border-primary text-primary hover:bg-primary/10 transition-all font-bold">
                     Learn More
                   </Button>
                 </Link>
               </div>
             </div>
-            <div className="relative h-[250px] rounded-[3rem] overflow-hidden shadow-xl border-4 border-slate-50 mx-auto w-full max-w-sm">
+            <div className="relative h-[400px] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-slate-50 mx-auto w-full max-w-md">
               <Image
                 src={aboutImage?.imageUrl || ''}
                 alt="HPI Quality Control"
@@ -138,24 +138,24 @@ export default function Home() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="p-10 border-none shadow-lg bg-white rounded-[2.5rem] hover:translate-y-[-5px] transition-transform duration-300">
-               <div className="h-12 w-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                <Eye className="h-6 w-6 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <Card className="p-12 border-none shadow-xl bg-white rounded-[3rem] hover:translate-y-[-5px] transition-transform duration-300">
+               <div className="h-16 w-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                <Eye className="h-8 w-8 text-primary" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-800 mb-2">Our Vision</h2>
-              <p className="text-slate-600 text-sm leading-relaxed text-justify">
+              <h2 className="text-3xl font-bold text-slate-800 mb-4">Our Vision</h2>
+              <p className="text-slate-600 text-lg leading-relaxed text-justify">
                 Our vision is to become a <span className="font-bold text-slate-800">recognized and respected leader</span> in the pharmaceutical marketing industry, known for our dedication to <span className="font-bold text-primary">quality, innovation, and patient-centric solutions</span>. What makes <span className="font-bold text-slate-800">Health Plus Innovation</span> different is our unwavering focus on <span className="font-bold text-primary">trust, quality, and consistency</span>. We believe in building <span className="font-bold text-slate-800">long-term relationships</span> with healthcare providers by offering not only good products but also strong support.
               </p>
             </Card>
-            <Card className="p-10 border-none shadow-lg bg-white rounded-[2.5rem] hover:translate-y-[-5px] transition-transform duration-300">
-               <div className="h-12 w-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                <Target className="h-6 w-6 text-accent-foreground" />
+            <Card className="p-12 border-none shadow-xl bg-white rounded-[3rem] hover:translate-y-[-5px] transition-transform duration-300">
+               <div className="h-16 w-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                <Target className="h-8 w-8 text-accent-foreground" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-800 mb-2">Our Mission</h2>
-              <p className="text-slate-600 text-sm leading-relaxed text-justify">
+              <h2 className="text-3xl font-bold text-slate-800 mb-4">Our Mission</h2>
+              <p className="text-slate-600 text-lg leading-relaxed text-justify">
                 At <span className="font-bold text-slate-800">Health Plus Innovation (HPI)</span>, our mission is to deliver <span className="font-bold text-primary">high-quality, effective, and affordable pharmaceutical products</span> to healthcare professionals and institutions through <span className="font-bold text-slate-800">ethical marketing and reliable distribution</span>. We aim to bridge the gap between pharmaceutical manufacturers and hospitals by ensuring that <span className="font-bold text-primary">trusted medicines</span> reach the patients who need them most.
               </p>
             </Card>
@@ -221,27 +221,27 @@ export default function Home() {
       </section>
 
       {/* Trusted Partners */}
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-4 text-center mb-10">
-          <h2 className="text-3xl font-bold text-slate-800 mb-2">Our Trusted Hospital Network</h2>
-          <p className="text-slate-500 text-lg max-w-xl mx-auto">Collaborating with India's leading healthcare institutions.</p>
+      <section className="py-24 bg-slate-50">
+        <div className="container mx-auto px-4 text-center mb-16">
+          <h2 className="text-4xl font-bold text-slate-800 mb-4">Our Trusted Hospital Network</h2>
+          <p className="text-slate-500 text-xl max-w-2xl mx-auto font-medium">Collaborating with India's leading healthcare institutions to provide premium medical supplies.</p>
         </div>
         
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
             {partners.map((partner, index) => (
-              <div key={index} className="flex flex-col items-center p-6 bg-white rounded-[2rem] shadow-sm hover:shadow-xl hover:translate-y-[-5px] transition-all duration-300 text-center space-y-3 group border border-slate-100">
-                <div className="relative h-12 w-20 opacity-100 transition-transform duration-500 group-hover:scale-125">
+              <div key={index} className="flex flex-col items-center p-8 bg-white rounded-[2.5rem] shadow-md hover:shadow-2xl hover:translate-y-[-8px] transition-all duration-300 text-center space-y-4 group border border-slate-100">
+                <div className="relative h-20 w-32 opacity-100 transition-transform duration-500 group-hover:scale-110">
                   <Image
-                    src={`https://picsum.photos/seed/partner${index}/300/150`}
+                    src={`https://picsum.photos/seed/partner${index}/400/200`}
                     alt={partner.name}
                     fill
                     className="object-contain"
                   />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[12px] text-slate-800 leading-tight group-hover:text-primary transition-colors">{partner.name}</h4>
-                  <p className="text-[9px] text-primary font-black uppercase tracking-widest mt-0.5">{partner.text}</p>
+                  <h4 className="font-bold text-base text-slate-800 leading-tight group-hover:text-primary transition-colors">{partner.name}</h4>
+                  <p className="text-[11px] text-primary font-black uppercase tracking-widest mt-1.5">{partner.text}</p>
                 </div>
               </div>
             ))}
