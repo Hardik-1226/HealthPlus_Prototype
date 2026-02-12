@@ -46,6 +46,7 @@ export const Footer = () => {
               <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
               <li><Link href="/products" className="hover:text-primary transition-colors">Catalog</Link></li>
               <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link href="/shipping" className="hover:text-primary transition-colors">Shipping & Delivery</Link></li>
               <li><Link href="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link></li>
             </ul>
 
@@ -104,7 +105,7 @@ export const Footer = () => {
       <div className="bg-white py-4 border-t">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2">
           <p className="text-[#8a6a8a] font-bold text-[10px] text-center">
-            Copyright © 2026 hpi.co.in | <Link href="/terms" className="hover:text-primary">T&amp;C</Link>
+            Copyright © 2026 hpi.co.in | <Link href="/terms" className="hover:text-primary">T&amp;C</Link> | <Link href="/shipping" className="hover:text-primary">Shipping</Link>
           </p>
           <Button 
             variant="ghost" 
