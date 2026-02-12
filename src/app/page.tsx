@@ -112,10 +112,10 @@ export default function Home() {
                 </h2>
               </div>
               <p className="text-md text-slate-600 leading-relaxed text-justify">
-                Health Plus Innovation Pvt. Ltd. is a pharmaceutical company founded in 2020 with a strong commitment to improving healthcare through safe, reliable, and innovative medicines. We focus on providing high-quality pharmaceutical products to hospitals, clinics, and healthcare professionals across India.
+                <span className="font-bold text-slate-800">Health Plus Innovation Pvt. Ltd.</span> is a pharmaceutical company founded in 2020 with a strong commitment to improving healthcare through <span className="font-bold text-primary">safe, reliable, and innovative medicines</span>. We focus on providing high-quality pharmaceutical products to hospitals, clinics, and healthcare professionals across India.
               </p>
               <p className="text-md text-slate-600 leading-relaxed text-justify">
-                What makes Health Plus Innovation different is our focus on trust, quality, and consistency. We believe in building long-term relationships with healthcare providers.
+                What makes <span className="font-bold text-slate-800">Health Plus Innovation</span> different is our focus on <span className="font-bold text-primary">trust, quality, and consistency</span>. We believe in building <span className="font-bold text-slate-800">long-term relationships</span> with healthcare providers by offering exceptional service.
               </p>
               <div className="pt-2">
                 <Link href="/about">
@@ -147,7 +147,7 @@ export default function Home() {
               </div>
               <h2 className="text-2xl font-bold text-slate-800 mb-2">Our Vision</h2>
               <p className="text-slate-600 text-sm leading-relaxed text-justify">
-                Our vision is to become a recognized and respected leader in the pharmaceutical marketing industry, known for our dedication to quality, innovation, and patient-centric solutions. What makes Health Plus Innovation different is our focus on trust, quality, and consistency. We believe in building long-term relationships with healthcare providers by offering not only good products but also strong support.
+                Our vision is to become a <span className="font-bold text-slate-800">recognized and respected leader</span> in the pharmaceutical marketing industry, known for our dedication to <span className="font-bold text-primary">quality, innovation, and patient-centric solutions</span>. What makes <span className="font-bold text-slate-800">Health Plus Innovation</span> different is our unwavering focus on <span className="font-bold text-primary">trust, quality, and consistency</span>. We believe in building <span className="font-bold text-slate-800">long-term relationships</span> with healthcare providers by offering not only good products but also strong support.
               </p>
             </Card>
             <Card className="p-10 border-none shadow-lg bg-white rounded-[2.5rem] hover:translate-y-[-5px] transition-transform duration-300">
@@ -156,7 +156,7 @@ export default function Home() {
               </div>
               <h2 className="text-2xl font-bold text-slate-800 mb-2">Our Mission</h2>
               <p className="text-slate-600 text-sm leading-relaxed text-justify">
-                At Health Plus Innovation (HPI), our mission is to deliver high-quality, effective, and affordable pharmaceutical products to healthcare professionals and institutions through ethical marketing and reliable distribution. We aim to bridge the gap between pharmaceutical manufacturers and hospitals by ensuring that trusted medicines reach the patients who need them most.
+                At <span className="font-bold text-slate-800">Health Plus Innovation (HPI)</span>, our mission is to deliver <span className="font-bold text-primary">high-quality, effective, and affordable pharmaceutical products</span> to healthcare professionals and institutions through <span className="font-bold text-slate-800">ethical marketing and reliable distribution</span>. We aim to bridge the gap between pharmaceutical manufacturers and hospitals by ensuring that <span className="font-bold text-primary">trusted medicines</span> reach the patients who need them most.
               </p>
             </Card>
           </div>
