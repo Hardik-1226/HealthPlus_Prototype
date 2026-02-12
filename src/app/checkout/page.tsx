@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { CreditCard, Truck, ShieldCheck, ShoppingCart } from 'lucide-react';
+import { CreditCard, Truck, ShieldCheck, ShoppingCart, Tag } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
@@ -188,32 +188,55 @@ export default function CheckoutPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6 divide-y divide-slate-100">
-              <div className="max-h-[300px] overflow-y-auto pr-2 space-y-4 mb-6 scrollbar-hide">
+              <div className="max-h-[400px] overflow-y-auto pr-2 space-y-2 mb-6 scrollbar-hide">
                 {cart.map(item => (
-                  <div key={item.id} className="py-1 flex justify-between gap-4 items-center">
-                    <div className="flex gap-3 items-center">
-                      <div className="relative h-12 w-12 bg-slate-50 rounded-xl overflow-hidden shrink-0 border border-slate-100">
-                        <Image src={item.imageUrl} alt={item.name} fill className="object-cover" />
+                  <div key={item.id} className="py-4 flex flex-col gap-3 border-b last:border-0 border-slate-50">
+                    <div className="flex justify-between gap-4 items-start">
+                      <div className="flex gap-4 items-start">
+                        <div className="relative h-16 w-16 bg-slate-50 rounded-2xl overflow-hidden shrink-0 border border-slate-100">
+                          <Image src={item.imageUrl} alt={item.name} fill className="object-cover" />
+                        </div>
+                        <div className="space-y-1">
+                          <p className="font-bold text-slate-800 text-sm">{item.name}</p>
+                          <p className="text-[10px] text-slate-400 line-clamp-2 leading-relaxed font-medium italic">
+                            {item.description}
+                          </p>
+                          <div className="flex flex-wrap items-center gap-2 pt-1">
+                            <span className="text-xs font-black text-primary">₹{item.price.toFixed(2)}</span>
+                            <span className="text-[10px] text-slate-400 line-through font-bold">₹{item.mrp.toFixed(2)}</span>
+                            <span className="text-[9px] bg-primary/10 text-primary px-1.5 py-0.5 rounded-full font-bold">
+                              Save {Math.round(((item.mrp - item.price) / item.mrp) * 100)}%
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-bold text-slate-800 text-sm line-clamp-1">{item.name}</p>
-                        <p className="text-[10px] font-bold text-primary uppercase tracking-widest">Qty: {item.quantity}</p>
+                      <div className="text-right shrink-0">
+                        <p className="font-black text-slate-800 text-sm">₹{(item.price * item.quantity).toFixed(2)}</p>
+                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Qty: {item.quantity}</p>
                       </div>
                     </div>
-                    <p className="font-black text-slate-800 text-sm">₹{(item.price * item.quantity).toFixed(2)}</p>
                   </div>
                 ))}
               </div>
               
-              <div className="pt-6 space-y-2">
+              <div className="pt-6 space-y-3">
                 <div className="flex justify-between text-slate-400 font-bold uppercase text-[10px] tracking-widest">
-                  <span>Subtotal</span>
+                  <span>Gross Subtotal</span>
                   <span className="text-slate-800 text-sm">₹{cartTotal.toFixed(2)}</span>
                 </div>
+                <div className="flex justify-between items-center bg-primary/5 p-3 rounded-2xl border border-primary/10">
+                  <div className="flex items-center gap-2">
+                    <Tag className="h-4 w-4 text-primary" />
+                    <span className="text-[10px] font-bold text-primary uppercase tracking-widest">Total Savings</span>
+                  </div>
+                  <span className="text-sm font-black text-primary">
+                    ₹{cart.reduce((acc, item) => acc + (item.mrp - item.price) * item.quantity, 0).toFixed(2)}
+                  </span>
+                </div>
                 <Separator className="my-4" />
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-bold text-slate-800">Total</span>
-                  <span className="text-2xl font-black text-slate-800">₹{cartTotal.toFixed(2)}</span>
+                <div className="flex justify-between items-center pt-2">
+                  <span className="text-lg font-bold text-slate-800">Payable Total</span>
+                  <span className="text-3xl font-black text-slate-800">₹{cartTotal.toFixed(2)}</span>
                 </div>
               </div>
             </CardContent>
