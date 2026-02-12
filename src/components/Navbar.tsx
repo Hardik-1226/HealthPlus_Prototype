@@ -71,26 +71,26 @@ export const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full flex flex-col shadow-sm">
+    <header className="sticky top-0 z-50 w-full flex flex-col shadow-sm bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       {/* Top Contact Bar */}
-      <div className="w-full bg-primary text-primary-foreground py-1.5 px-4 hidden sm:block">
-        <div className="container mx-auto flex justify-between items-center text-[10px] md:text-xs font-semibold">
+      <div className="w-full bg-[#3AB8C5]/10 text-slate-600 py-1.5 px-4 hidden sm:block border-b">
+        <div className="container mx-auto flex justify-between items-center text-[10px] font-black uppercase tracking-widest">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
-              <Phone className="h-3.5 w-3.5" /> +91 9266903156
+              <Phone className="h-3.5 w-3.5 text-primary" /> +91 9266903156
             </span>
             <span className="flex items-center gap-2">
-              <Mail className="h-3.5 w-3.5" /> innovateplushealth@gmail.com
+              <Mail className="h-3.5 w-3.5 text-primary" /> innovateplushealth@gmail.com
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="#" target="_blank" className="hover:opacity-80 transition-opacity">
+            <Link href="#" target="_blank" className="hover:text-primary transition-colors">
               <Facebook className="h-4 w-4" />
             </Link>
-            <Link href="#" target="_blank" className="hover:opacity-80 transition-opacity">
+            <Link href="#" target="_blank" className="hover:text-primary transition-colors">
               <Twitter className="h-4 w-4" />
             </Link>
-            <Link href="#" target="_blank" className="hover:opacity-80 transition-opacity">
+            <Link href="#" target="_blank" className="hover:text-primary transition-colors">
               <Instagram className="h-4 w-4" />
             </Link>
           </div>
@@ -98,7 +98,7 @@ export const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <div className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="w-full border-b">
         <div className="container mx-auto px-4 flex h-20 items-center justify-between gap-4">
           
           {/* Logo Section */}
@@ -110,9 +110,9 @@ export const Navbar = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="w-[300px]">
-                <SheetHeader className="text-left mb-6">
-                  <SheetTitle className="text-2xl font-black text-primary">HPI Menu</SheetTitle>
-                  <SheetDescription className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                <SheetHeader className="text-left mb-8">
+                  <SheetTitle className="text-3xl font-black text-primary uppercase tracking-tight">HPI Menu</SheetTitle>
+                  <SheetDescription className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
                     Innovative Healthcare Solutions
                   </SheetDescription>
                 </SheetHeader>
@@ -123,22 +123,22 @@ export const Navbar = () => {
                       href={link.path} 
                       onClick={() => setOpen(false)} 
                       className={cn(
-                        "text-lg font-bold py-2 border-b transition-colors",
+                        "text-lg font-black py-4 border-b uppercase tracking-widest transition-colors",
                         pathname === link.path ? "text-primary border-primary" : "text-slate-600 border-transparent"
                       )}
                     >
                       {link.name}
                     </Link>
                   ))}
-                  <Button variant="outline" className="mt-4 gap-2 rounded-full border-primary/40 text-xs uppercase tracking-widest font-black h-12">
-                    <FileDown className="h-4 w-4" /> Download Brochure
+                  <Button variant="outline" className="mt-6 gap-3 rounded-full border-primary/40 text-xs uppercase tracking-[0.2em] font-black h-14">
+                    <FileDown className="h-5 w-5" /> Download Brochure
                   </Button>
                 </div>
               </SheetContent>
             </Sheet>
             
-            <Link href="/" className="flex items-center gap-2">
-              <div className="relative h-10 w-10 flex items-center justify-center">
+            <Link href="/" className="flex items-center gap-3">
+              <div className="relative h-12 w-12 flex items-center justify-center">
                 <svg viewBox="0 0 100 100" className="w-full h-full text-primary fill-current">
                   <path d="M50 5 C25.1 5 5 25.1 5 50 C5 74.9 25.1 95 50 95 C74.9 95 95 74.9 95 50 C95 25.1 74.9 5 50 5 Z M50 91 C27.4 91 9 72.6 9 50 C9 27.4 27.4 9 50 9 C72.6 9 91 27.4 91 50 C91 72.6 72.6 91 50 91 Z" />
                   <path d="M38 44 H44 V38 H56 V44 H62 V56 H56 V62 H44 V56 H38 V44 Z" />
@@ -148,27 +148,27 @@ export const Navbar = () => {
                 </svg>
               </div>
               <div className="flex flex-col">
-                <span className="font-headline font-black text-lg md:text-xl tracking-tighter leading-none">
+                <span className="font-headline font-black text-xl md:text-2xl tracking-tighter leading-none text-slate-800">
                   Health<span className="text-primary">Plus</span>
                 </span>
-                <span className="text-[6px] font-bold uppercase tracking-[0.2em] text-slate-500 leading-none mt-1">
+                <span className="text-[7px] font-black uppercase tracking-[0.3em] text-slate-500 leading-none mt-1.5">
                   Innovation Pvt. Ltd.
                 </span>
               </div>
             </Link>
           </div>
 
-          {/* Desktop Navigation Links - Centered */}
-          <nav className="hidden md:flex items-center justify-center flex-1 gap-6 lg:gap-8 text-[10px] font-black uppercase tracking-[0.15em]">
+          {/* Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center justify-center flex-1 gap-8 text-[11px] font-black uppercase tracking-[0.2em]">
             {navLinks.map((link) => (
               <Link 
                 key={link.path}
                 href={link.path} 
                 className={cn(
-                  "transition-all py-2 px-1 border-b-2",
+                  "transition-all py-2 border-b-2",
                   pathname === link.path 
                     ? "text-primary border-primary" 
-                    : "text-slate-600 border-transparent hover:text-primary hover:border-primary/50"
+                    : "text-slate-500 border-transparent hover:text-primary hover:border-primary/50"
                 )}
               >
                 {link.name}
@@ -177,22 +177,22 @@ export const Navbar = () => {
           </nav>
 
           {/* Actions Section */}
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-4 shrink-0">
             <div className="hidden lg:block relative group" ref={searchRef}>
-              <form onSubmit={handleSearchSubmit} className="relative w-48 xl:w-64">
+              <form onSubmit={handleSearchSubmit} className="relative w-48 xl:w-72">
                 <Input
                   type="text"
                   placeholder="Search medicines..."
-                  className="h-10 rounded-full pl-9 pr-4 border-slate-200 bg-slate-50 focus:bg-white focus:w-72 transition-all text-[11px] font-bold"
+                  className="h-12 rounded-full pl-10 pr-4 border-slate-200 bg-slate-50/50 focus:bg-white focus:ring-primary/20 transition-all text-[11px] font-bold"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 group-focus-within:text-primary transition-colors" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 group-focus-within:text-primary transition-colors" />
                 {searchQuery && (
                   <button 
                     type="button" 
                     onClick={() => setSearchQuery('')}
-                    className="absolute right-3 top-1/2 -translate-y-1/2"
+                    className="absolute right-4 top-1/2 -translate-y-1/2"
                   >
                     <X className="h-3 w-3 text-slate-400 hover:text-slate-600" />
                   </button>
@@ -200,22 +200,22 @@ export const Navbar = () => {
               </form>
               
               {showSuggestions && suggestions.length > 0 && (
-                <div className="absolute top-full right-0 w-80 bg-white shadow-2xl border border-slate-100 rounded-2xl mt-3 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="bg-slate-50 p-2 border-b">
-                    <p className="text-[9px] font-black uppercase tracking-widest text-slate-400 px-2">Top Matches</p>
+                <div className="absolute top-full right-0 w-80 bg-white shadow-2xl border border-slate-100 rounded-[2rem] mt-4 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-300">
+                  <div className="bg-slate-50 p-3 border-b">
+                    <p className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 px-3">Top Matches</p>
                   </div>
                   {suggestions.map(p => (
                     <div 
                       key={p.id} 
-                      className="p-3 hover:bg-primary/5 cursor-pointer border-b last:border-0 flex items-center gap-3 transition-colors"
+                      className="p-4 hover:bg-primary/5 cursor-pointer border-b last:border-0 flex items-center gap-4 transition-colors"
                       onClick={() => handleSuggestionClick(p.id)}
                     >
-                      <div className="h-10 w-10 relative rounded-lg bg-slate-100 overflow-hidden shrink-0">
+                      <div className="h-10 w-10 relative rounded-xl bg-slate-100 overflow-hidden shrink-0">
                         <Image src={p.imageUrl} alt={p.name} fill className="object-cover" />
                       </div>
                       <div className="flex-grow">
-                        <p className="text-xs font-black text-slate-800 line-clamp-1">{p.name}</p>
-                        <p className="text-[9px] text-primary font-bold uppercase tracking-tight">{p.category}</p>
+                        <p className="text-xs font-black text-slate-800 line-clamp-1 uppercase tracking-tight">{p.name}</p>
+                        <p className="text-[9px] text-primary font-black uppercase tracking-widest">{p.category}</p>
                       </div>
                       <div className="text-right">
                         <p className="text-[10px] font-black text-slate-800">₹{p.price}</p>
@@ -225,12 +225,16 @@ export const Navbar = () => {
                 </div>
               )}
             </div>
+
+            <Button variant="outline" className="hidden xl:flex gap-3 rounded-full border-slate-200 text-[10px] uppercase tracking-[0.2em] font-black h-12 hover:bg-slate-50 group">
+              <FileDown className="h-4 w-4 text-primary group-hover:scale-110 transition-transform" /> Brochure
+            </Button>
             
             <Link href="/cart">
-              <Button variant="ghost" size="icon" className="relative h-11 w-11 group border-2 border-primary/20 transition-all rounded-xl bg-white shadow-sm hover:shadow-md hover:border-primary">
+              <Button variant="ghost" size="icon" className="relative h-12 w-12 group border-2 border-primary/20 transition-all rounded-2xl bg-white shadow-sm hover:shadow-xl hover:border-primary">
                 <ShoppingCart className="h-6 w-6 text-slate-700 group-hover:text-primary transition-colors" />
                 {cartCount > 0 && (
-                  <Badge className="absolute -top-2 -right-2 h-6 w-6 flex items-center justify-center p-0 text-[10px] bg-accent text-accent-foreground border-2 border-white font-black rounded-full shadow-lg animate-in zoom-in">
+                  <Badge className="absolute -top-3 -right-3 h-7 w-7 flex items-center justify-center p-0 text-[10px] bg-accent text-accent-foreground border-4 border-white font-black rounded-full shadow-lg">
                     {cartCount}
                   </Badge>
                 )}

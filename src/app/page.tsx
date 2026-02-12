@@ -1,20 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { PRODUCTS } from '@/lib/products';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Target, Eye, ArrowRight, Heart, Pill, Plus, Activity, Star, Stethoscope } from 'lucide-react';
+import { Shield, Target, Eye, ArrowRight, Heart, Pill, Plus, Activity, Star } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
-  const aboutImage = PlaceHolderImages.find(img => img.id === 'about-image');
-  const doc1 = PlaceHolderImages.find(img => img.id === 'doctor-1');
-  const doc2 = PlaceHolderImages.find(img => img.id === 'doctor-2');
-  const circle1 = PlaceHolderImages.find(img => img.id === 'med-circle-1');
-  const circle2 = PlaceHolderImages.find(img => img.id === 'med-circle-2');
-
   const partners = [
     { name: "Max Gurgaon", text: "Hospital Partner" },
     { name: "Max BLK", text: "Hospital Partner" },
@@ -38,120 +29,136 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full overflow-x-hidden">
       {/* Visual Themed Hero Section */}
-      <section className="relative bg-[#f0f9fa] min-h-[85vh] flex flex-col items-center justify-center text-center px-4 pt-16 pb-20 overflow-hidden">
+      <section className="relative bg-[#f0f9fa] min-h-[90vh] flex flex-col items-center justify-center text-center px-4 pt-16 pb-20 overflow-hidden">
         
-        {/* Hanging Icons - Slow Professional Animations */}
-        <div className="absolute top-0 inset-x-0 h-full pointer-events-none z-0 hidden md:flex justify-around opacity-40">
-          {[...Array(15)].map((_, i) => (
+        {/* Hanging Icons Animation Layer */}
+        <div className="absolute top-0 inset-x-0 h-full pointer-events-none z-0 hidden md:flex justify-around opacity-30">
+          {[...Array(12)].map((_, i) => (
             <div 
               key={i} 
               className="flex flex-col items-center animate-bounce" 
               style={{ 
-                animationDuration: `${12 + i * 2}s`, 
-                animationDelay: `${i * 0.5}s`,
-                marginTop: `${-20 + (i % 5) * 10}px` 
+                animationDuration: `${8 + i * 2}s`, 
+                animationDelay: `${i * 0.3}s`,
+                marginTop: `${-10 + (i % 4) * 5}px` 
               }}
             >
-              <div className="h-24 md:h-64 w-[1px] bg-slate-300"></div>
-              {i % 5 === 0 ? (
-                <Plus className="h-4 w-4 text-primary" />
-              ) : i % 5 === 1 ? (
-                <Heart className="h-4 w-4 text-accent fill-accent animate-pulse" style={{ animationDuration: '6s' }} />
-              ) : i % 5 === 2 ? (
-                <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-              ) : i % 5 === 3 ? (
-                <Activity className="h-4 w-4 text-primary" />
-              ) : (
-                <Pill className="h-4 w-4 text-slate-400" />
-              )}
+              <div className="h-48 md:h-80 w-[1px] bg-slate-300"></div>
+              <div className="mt-2">
+                {i % 5 === 0 ? (
+                  <Plus className="h-4 w-4 text-primary" />
+                ) : i % 5 === 1 ? (
+                  <Heart className="h-4 w-4 text-primary/60" />
+                ) : i % 5 === 2 ? (
+                  <Star className="h-3 w-3 text-slate-300" />
+                ) : i % 5 === 3 ? (
+                  <Activity className="h-4 w-4 text-primary/40" />
+                ) : (
+                  <Pill className="h-4 w-4 text-slate-400" />
+                )}
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="container relative z-10 mx-auto">
-          {/* Main Hero Content */}
-          <div className="flex flex-col items-center space-y-6 max-w-4xl mx-auto relative">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-slate-800 leading-[1.1] uppercase">
-              EMPOWERING<br />
-              <span className="text-slate-800">WELLNESS THROUGH</span><br />
-              <span className="text-primary">INNOVATION</span>
-            </h1>
-            <p className="text-sm md:text-lg text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed px-4">
-              Reliable pharmaceutical products for hospitals, clinics & healthcare professionals across India.
-            </p>
-            <div className="pt-4">
-              <Link href="/products">
-                <Button size="lg" className="rounded-full px-10 h-14 text-md bg-[#3AB8C5] text-white hover:bg-[#32a2ae] shadow-xl transition-all font-black uppercase tracking-widest">
-                  Explore Our Products
-                </Button>
-              </Link>
+        <div className="container relative z-10 mx-auto px-4 flex flex-col items-center">
+          {/* Layout Wrapper for Left Image, Center Text, Right Circles */}
+          <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-8 lg:gap-0">
+            
+            {/* Left Image - Rectangular Wellness Illustration */}
+            <div className="hidden lg:block w-[300px] h-[450px] relative rounded-lg overflow-hidden shadow-2xl animate-in slide-in-from-left duration-1000">
+              <Image 
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600"
+                alt="Wellness Illustration"
+                fill
+                className="object-cover"
+                data-ai-hint="herbal wellness"
+              />
             </div>
-          </div>
 
-          {/* Left Side - Doctor Illustrations */}
-          <div className="absolute bottom-0 left-[-5%] hidden xl:flex items-end pointer-events-none opacity-60 hover:opacity-100 transition-opacity duration-700">
-            <div className="relative h-[250px] w-[180px] animate-in slide-in-from-left duration-1000">
-              <Image 
-                src={doc1?.imageUrl || ''} 
-                alt="Doctor 1" 
-                fill 
-                className="object-contain" 
-              />
+            {/* Center Content */}
+            <div className="flex flex-col items-center space-y-8 max-w-2xl text-center lg:px-4">
+              <div className="space-y-1">
+                <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-slate-800 leading-[1.1] uppercase">
+                  EMPOWERING<br />
+                  <span className="text-primary">WELLNESS</span><br />
+                  THROUGH<br />
+                  INNOVATION
+                </h1>
+              </div>
+              
+              <p className="text-sm md:text-lg text-slate-500 max-w-md mx-auto font-bold leading-relaxed px-4">
+                Reliable pharmaceutical products for hospitals, clinics & healthcare professionals across India.
+              </p>
+              
+              <div className="pt-4">
+                <Link href="/products">
+                  <Button size="lg" className="rounded-full px-12 h-16 text-lg bg-primary text-white hover:bg-primary/90 shadow-2xl transition-all font-black uppercase tracking-widest border-4 border-white">
+                    Explore Our Products
+                  </Button>
+                </Link>
+              </div>
             </div>
-            <div className="relative h-[300px] w-[220px] -ml-16 animate-in slide-in-from-left duration-1000 delay-200">
-              <Image 
-                src={doc2?.imageUrl || ''} 
-                alt="Doctor 2" 
-                fill 
-                className="object-contain" 
-              />
-            </div>
-          </div>
 
-          {/* Right Side - Medical Circles */}
-          <div className="absolute right-[-2%] top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-8 pointer-events-none opacity-60 hover:opacity-100 transition-opacity duration-700">
-            <div className="h-28 w-28 rounded-full border-4 border-white shadow-2xl overflow-hidden relative animate-in fade-in zoom-in duration-1000 delay-500">
-              <Image 
-                src={circle1?.imageUrl || ''} 
-                alt="Medical Feature 1" 
-                fill 
-                className="object-cover" 
-              />
-            </div>
-            <div className="h-36 w-36 rounded-full border-4 border-white shadow-2xl overflow-hidden relative mr-12 animate-in fade-in zoom-in duration-1000 delay-700">
-              <Image 
-                src={circle2?.imageUrl || ''} 
-                alt="Medical Feature 2" 
-                fill 
-                className="object-cover" 
-              />
+            {/* Right Side - Medical Circular Features */}
+            <div className="hidden lg:flex flex-col gap-10 items-center justify-center animate-in slide-in-from-right duration-1000">
+              <div className="h-40 w-40 rounded-full border-8 border-white shadow-2xl overflow-hidden relative group">
+                <Image 
+                  src="https://images.unsplash.com/photo-1576091160550-2173dad99a01?auto=format&fit=crop&q=80&w=300"
+                  alt="Medical Professional"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  data-ai-hint="doctor professional"
+                />
+              </div>
+              <div className="h-52 w-52 rounded-full border-8 border-white shadow-2xl overflow-hidden relative group translate-x-12">
+                <Image 
+                  src="https://images.unsplash.com/photo-1579152276532-535c21af1aa5?auto=format&fit=crop&q=80&w=400"
+                  alt="Laboratory Research"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  data-ai-hint="lab research"
+                />
+              </div>
             </div>
           </div>
+        </div>
+
+        {/* Bottom Wave Element */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-32 md:h-48 text-white fill-current">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+          </svg>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white relative">
         <div className="container mx-auto px-4 md:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 md:pl-16">
-              <h2 className="text-3xl font-black text-slate-800 tracking-tight uppercase">
-                About <span className="text-primary">Health Plus Innovation</span>
-              </h2>
-              <div className="h-1.5 w-16 bg-primary rounded-full" />
-              <p className="text-lg text-slate-600 leading-relaxed text-justify">
-                <strong>Health Plus Innovation Pvt. Ltd.</strong> is a leading pharmaceutical company founded in 2020. We are dedicated to delivering <strong>safe, effective, and high-quality medicines</strong> to healthcare providers and institutions across the nation.
-              </p>
-              <p className="text-lg text-slate-600 leading-relaxed text-justify">
-                Our operations are built on a foundation of <strong>trust and professional ethics</strong>, ensuring that every product in our catalog meets rigorous clinical standards for patient safety and well-being.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8 md:pl-16">
+              <div className="space-y-3">
+                <h2 className="text-4xl font-black text-slate-800 tracking-tight uppercase">
+                  About <span className="text-primary">Health Plus Innovation</span>
+                </h2>
+                <div className="h-1.5 w-24 bg-primary rounded-full" />
+              </div>
+              <div className="space-y-6 text-slate-600 font-medium text-lg leading-relaxed text-justify">
+                <p>
+                  <strong>Health Plus Innovation Pvt. Ltd.</strong> is a leading pharmaceutical company founded in 2020. We are dedicated to delivering <strong>safe, effective, and high-quality medicines</strong> to healthcare providers and institutions across the nation.
+                </p>
+                <p>
+                  Our operations are built on a foundation of <strong>trust and professional ethics</strong>, ensuring that every product in our catalog meets rigorous clinical standards for patient safety and well-being.
+                </p>
+              </div>
             </div>
-            <div className="relative h-[350px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-slate-50 group">
+            <div className="relative h-[450px] rounded-[4rem] overflow-hidden shadow-2xl border-4 border-slate-50 group">
               <Image
-                src={aboutImage?.imageUrl || ''}
+                src="https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800"
                 alt="HPI Quality Commitment"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                data-ai-hint="pharma quality"
               />
             </div>
           </div>
@@ -159,24 +166,24 @@ export default function Home() {
       </section>
 
       {/* Vision & Mission Cards */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4 md:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:pl-16">
-            <Card className="p-10 border-none shadow-xl bg-white rounded-[2.5rem] hover:translate-y-[-8px] transition-all duration-500">
-               <div className="h-20 w-20 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
-                <Eye className="h-10 w-10 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:pl-16">
+            <Card className="p-12 border-none shadow-2xl bg-white rounded-[3rem] hover:translate-y-[-10px] transition-all duration-500 group">
+               <div className="h-24 w-24 bg-primary/10 rounded-[2rem] flex items-center justify-center mb-10 group-hover:bg-primary/20 transition-colors">
+                <Eye className="h-12 w-12 text-primary" />
               </div>
               <h2 className="text-3xl font-black text-slate-800 mb-6 uppercase tracking-tight">Our Vision</h2>
-              <p className="text-slate-600 text-lg leading-relaxed text-justify">
+              <p className="text-slate-600 text-lg leading-relaxed text-justify font-medium">
                 To be the <strong>pioneering force</strong> in pharmaceutical innovation, recognized for our <strong>unwavering commitment to quality</strong> and our role in shaping a healthier future for the Indian healthcare landscape.
               </p>
             </Card>
-            <Card className="p-10 border-none shadow-xl bg-white rounded-[2.5rem] hover:translate-y-[-8px] transition-all duration-500">
-               <div className="h-20 w-20 bg-accent/10 rounded-2xl flex items-center justify-center mb-8">
-                <Target className="h-10 w-10 text-accent-foreground" />
+            <Card className="p-12 border-none shadow-2xl bg-white rounded-[3rem] hover:translate-y-[-10px] transition-all duration-500 group">
+               <div className="h-24 w-24 bg-accent/10 rounded-[2rem] flex items-center justify-center mb-10 group-hover:bg-accent/20 transition-colors">
+                <Target className="h-12 w-12 text-accent-foreground" />
               </div>
               <h2 className="text-3xl font-black text-slate-800 mb-6 uppercase tracking-tight">Our Mission</h2>
-              <p className="text-slate-600 text-lg leading-relaxed text-justify">
+              <p className="text-slate-600 text-lg leading-relaxed text-justify font-medium">
                 At <strong>Health Plus Innovation</strong>, we bridge the gap between <strong>scientific advancement and patient care</strong> by providing affordable, clinical-grade formulations through ethical distribution networks.
               </p>
             </Card>
@@ -185,27 +192,27 @@ export default function Home() {
       </section>
 
       {/* Hospital Network */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 text-center mb-16">
-          <h2 className="text-4xl font-black text-slate-800 mb-4 uppercase tracking-tight">Trusted Institutional Network</h2>
-          <p className="text-slate-500 text-sm font-bold uppercase tracking-widest max-w-2xl mx-auto">Providing essential supplies to India's most prestigious healthcare centers.</p>
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 text-center mb-20">
+          <h2 className="text-5xl font-black text-slate-800 mb-6 uppercase tracking-tight">Trusted Institutional Network</h2>
+          <p className="text-slate-500 text-sm font-black uppercase tracking-[0.3em] max-w-2xl mx-auto">Providing essential supplies to India's most prestigious healthcare centers.</p>
         </div>
         
         <div className="container mx-auto px-4 md:px-16">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
             {partners.slice(0, 12).map((partner, index) => (
-              <div key={index} className="flex flex-col items-center p-8 bg-slate-50 rounded-[2rem] shadow-sm hover:shadow-xl hover:translate-y-[-6px] transition-all duration-500 text-center space-y-4 group border border-slate-100">
-                <div className="relative h-20 w-32 opacity-80 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110">
+              <div key={index} className="flex flex-col items-center p-10 bg-slate-50 rounded-[2.5rem] shadow-sm hover:shadow-2xl hover:translate-y-[-8px] transition-all duration-500 text-center space-y-6 group border border-slate-100">
+                <div className="relative h-24 w-36 opacity-70 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110">
                   <Image
-                    src={`https://picsum.photos/seed/hpi-p${index}/400/200`}
+                    src={`https://picsum.photos/seed/hpi-inst-${index}/400/200`}
                     alt={partner.name}
                     fill
                     className="object-contain"
                   />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm text-slate-800 leading-tight group-hover:text-primary transition-colors line-clamp-1">{partner.name}</h4>
-                  <p className="text-[9px] text-primary font-black uppercase tracking-widest mt-1">{partner.text}</p>
+                  <h4 className="font-black text-sm text-slate-800 leading-tight group-hover:text-primary transition-colors line-clamp-2">{partner.name}</h4>
+                  <p className="text-[10px] text-primary font-black uppercase tracking-[0.2em] mt-2">{partner.text}</p>
                 </div>
               </div>
             ))}
