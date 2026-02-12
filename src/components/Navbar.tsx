@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -7,7 +6,7 @@ import { useCart } from '@/context/CartContext';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useState } from 'react';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from '@/components/ui/sheet';
 
 export const Navbar = () => {
   const { cartCount } = useCart();
@@ -51,7 +50,13 @@ export const Navbar = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="w-[280px]">
-                <div className="flex flex-col gap-4 mt-8">
+                <SheetHeader className="text-left mb-6">
+                  <SheetTitle className="text-2xl font-black text-primary">HPI Menu</SheetTitle>
+                  <SheetDescription className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                    Innovative Healthcare Solutions
+                  </SheetDescription>
+                </SheetHeader>
+                <div className="flex flex-col gap-4">
                   <Link 
                     href="/" 
                     onClick={() => setOpen(false)}
@@ -80,7 +85,7 @@ export const Navbar = () => {
                   >
                     Contact
                   </Link>
-                  <Button variant="outline" className="mt-4 gap-2">
+                  <Button variant="outline" className="mt-4 gap-2 rounded-full border-primary/40">
                     <FileDown className="h-4 w-4" /> Download Brochure
                   </Button>
                 </div>
