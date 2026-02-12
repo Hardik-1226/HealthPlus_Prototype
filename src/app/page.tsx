@@ -104,17 +104,17 @@ export default function Home() {
       <section className="py-16 bg-white relative z-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+            <div className="space-y-6 md:pl-16">
               <div className="inline-block">
                 <h2 className="text-3xl font-bold text-slate-800 relative">
                   About Health Plus Innovation
                   <span className="absolute -bottom-2 left-0 w-20 h-1 bg-primary rounded-full" />
                 </h2>
               </div>
-              <p className="text-md text-slate-600 leading-relaxed">
+              <p className="text-md text-slate-600 leading-relaxed text-justify">
                 Health Plus Innovation Pvt. Ltd. is a pharmaceutical company founded in 2020 with a strong commitment to improving healthcare through safe, reliable, and innovative medicines. We focus on providing high-quality pharmaceutical products to hospitals, clinics, and healthcare professionals across India.
               </p>
-              <p className="text-md text-slate-600 leading-relaxed">
+              <p className="text-md text-slate-600 leading-relaxed text-justify">
                 What makes Health Plus Innovation different is our focus on trust, quality, and consistency. We believe in building long-term relationships with healthcare providers.
               </p>
               <div className="pt-2">
@@ -146,7 +146,7 @@ export default function Home() {
                 <Eye className="h-6 w-6 text-primary" />
               </div>
               <h2 className="text-2xl font-bold text-slate-800 mb-2">Our Vision</h2>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-600 text-sm leading-relaxed text-justify">
                 Our vision is to become a recognized and respected leader in the pharmaceutical marketing industry, known for our dedication to quality, innovation, and patient-centric solutions. What makes Health Plus Innovation different is our focus on trust, quality, and consistency. We believe in building long-term relationships with healthcare providers by offering not only good products but also strong support.
               </p>
             </Card>
@@ -155,7 +155,7 @@ export default function Home() {
                 <Target className="h-6 w-6 text-accent-foreground" />
               </div>
               <h2 className="text-2xl font-bold text-slate-800 mb-2">Our Mission</h2>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-600 text-sm leading-relaxed text-justify">
                 At Health Plus Innovation (HPI), our mission is to deliver high-quality, effective, and affordable pharmaceutical products to healthcare professionals and institutions through ethical marketing and reliable distribution. We aim to bridge the gap between pharmaceutical manufacturers and hospitals by ensuring that trusted medicines reach the patients who need them most.
               </p>
             </Card>
@@ -165,7 +165,7 @@ export default function Home() {
 
       {/* Products Carousel */}
       <section className="py-16 bg-white overflow-hidden">
-        <div className="container mx-auto px-4 mb-10 flex justify-between items-end">
+        <div className="container mx-auto px-4 mb-10 flex justify-between items-end md:pl-16">
           <div>
             <h2 className="text-3xl font-bold text-slate-800">Therapeutic Products</h2>
             <p className="text-slate-500 text-md mt-1 font-medium">Quality medicines for healthcare settings.</p>
@@ -177,7 +177,7 @@ export default function Home() {
           </Link>
         </div>
         
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:pl-16">
           <Carousel className="w-full" opts={{ align: 'start', loop: true }}>
             <CarouselContent className="-ml-4">
               {PRODUCTS.map((product) => (
