@@ -133,11 +133,11 @@ export default function CheckoutPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="firstName" className="text-sm font-semibold text-slate-700">First name</Label>
-                    <Input id="firstName" name="firstName" required value={formData.firstName} onChange={handleInputChange} placeholder="Jordan" className="h-12 rounded-xl bg-slate-50/50" />
+                    <Input id="firstName" name="firstName" required value={formData.firstName} onChange={handleInputChange} placeholder="Raj" className="h-12 rounded-xl bg-slate-50/50" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName" className="text-sm font-semibold text-slate-700">Last name</Label>
-                    <Input id="lastName" name="lastName" required value={formData.lastName} onChange={handleInputChange} placeholder="Smith" className="h-12 rounded-xl bg-slate-50/50" />
+                    <Input id="lastName" name="lastName" required value={formData.lastName} onChange={handleInputChange} placeholder="Singh" className="h-12 rounded-xl bg-slate-50/50" />
                   </div>
                 </div>
 
@@ -145,7 +145,7 @@ export default function CheckoutPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-sm font-semibold text-slate-700">Email address</Label>
-                    <Input id="email" name="email" type="email" required value={formData.email} onChange={handleInputChange} placeholder="jordansmith@mail.com" className="h-12 rounded-xl bg-slate-50/50" />
+                    <Input id="email" name="email" type="email" required value={formData.email} onChange={handleInputChange} placeholder="rajsing@example.com" className="h-12 rounded-xl bg-slate-50/50" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone" className="text-sm font-semibold text-slate-700">Phone number</Label>
