@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { PRODUCTS } from '@/lib/products';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Target, Eye, ArrowRight, Heart, Pill, Plus, Activity } from 'lucide-react';
+import { Shield, Target, Eye, ArrowRight, Heart, Pill, Plus, Activity, Star } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
@@ -30,16 +30,25 @@ export default function Home() {
       <section className="relative hero-gradient min-h-[70vh] flex flex-col items-center justify-center text-center px-4 pt-20 pb-24">
         {/* Decorative Hanging Icons */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
-          <div className="absolute top-0 left-1/4 animate-bounce duration-[3000ms]"><div className="h-16 w-[1px] bg-primary mx-auto"></div><Heart className="text-primary h-5 w-5" /></div>
-          <div className="absolute top-0 left-1/2 animate-bounce duration-[4000ms]"><div className="h-24 w-[1px] bg-accent mx-auto"></div><Plus className="text-accent h-5 w-5" /></div>
-          <div className="absolute top-0 left-3/4 animate-bounce duration-[3500ms]"><div className="h-20 w-[1px] bg-primary mx-auto"></div><Pill className="text-primary h-5 w-5" /></div>
+          {/* Hanging Elements */}
+          <div className="absolute top-0 left-[10%] animate-bounce duration-[3000ms]"><div className="h-16 w-[1px] bg-primary mx-auto"></div><Heart className="text-primary h-5 w-5" /></div>
+          <div className="absolute top-0 left-[25%] animate-bounce duration-[4000ms]"><div className="h-24 w-[1px] bg-accent mx-auto"></div><Star className="text-accent h-5 w-5" /></div>
+          <div className="absolute top-0 left-[40%] animate-bounce duration-[3500ms]"><div className="h-20 w-[1px] bg-primary mx-auto"></div><Heart className="text-primary h-4 w-4" /></div>
+          <div className="absolute top-0 left-[60%] animate-bounce duration-[4500ms]"><div className="h-28 w-[1px] bg-accent mx-auto"></div><Star className="text-accent h-6 w-6" /></div>
+          <div className="absolute top-0 left-[75%] animate-bounce duration-[3200ms]"><div className="h-20 w-[1px] bg-primary mx-auto"></div><Pill className="text-primary h-5 w-5" /></div>
+          <div className="absolute top-0 left-[90%] animate-bounce duration-[3800ms]"><div className="h-14 w-[1px] bg-accent mx-auto"></div><Heart className="text-accent h-4 w-4" /></div>
+
+          {/* Floating Elements */}
           <div className="absolute top-10 left-10 animate-pulse"><Activity className="text-primary h-6 w-6" /></div>
+          <div className="absolute top-40 left-[15%] animate-pulse duration-[3000ms]"><Star className="text-accent h-4 w-4" /></div>
+          <div className="absolute bottom-20 left-[5%] animate-pulse duration-[4000ms]"><Heart className="text-primary h-8 w-8" /></div>
           <div className="absolute top-20 right-20 animate-pulse"><Plus className="text-accent h-8 w-8" /></div>
+          <div className="absolute bottom-40 right-[10%] animate-pulse duration-[3500ms]"><Star className="text-primary h-10 w-10" /></div>
+          <div className="absolute top-[60%] right-[30%] animate-pulse duration-[5000ms]"><Heart className="text-accent h-6 w-6" /></div>
         </div>
 
         <div className="container relative z-10 mx-auto max-w-5xl">
           <div className="flex flex-col lg:flex-row items-center gap-8 mb-8">
-            {/* Hero Carousel Concept with static representations for now as per layout req */}
             <div className="hidden lg:block relative w-1/4 h-[250px]">
                <Image 
                 src="https://picsum.photos/seed/doc1/400/600" 
@@ -68,7 +77,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Images (Bubbles/Circles) */}
             <div className="hidden lg:flex flex-col gap-4 w-1/4 items-center">
               <div className="h-28 w-28 rounded-full border-4 border-white shadow-md overflow-hidden">
                 <Image src="https://picsum.photos/seed/lab1/300/300" alt="Lab" width={150} height={150} className="object-cover" />
