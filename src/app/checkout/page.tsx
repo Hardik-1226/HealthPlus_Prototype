@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -109,125 +108,107 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <div className="space-y-10">
-          <div className="space-y-3">
-            <h1 className="text-5xl font-bold text-slate-800">Finalize Order</h1>
-            <p className="text-xl text-slate-500 font-medium">Professional pharmaceutical procurement for healthcare entities.</p>
+    <div className="container mx-auto px-4 py-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <h1 className="text-3xl font-bold text-slate-800">Finalize Order</h1>
+            <p className="text-md text-slate-500 font-medium">Professional procurement for healthcare entities.</p>
           </div>
 
-          <form onSubmit={handlePayment} className="space-y-8">
-            <Card className="border-none shadow-xl rounded-[3rem] overflow-hidden">
-              <CardHeader className="bg-primary/5 p-8">
-                <CardTitle className="flex items-center gap-3 text-2xl font-bold text-slate-800">
-                  <Truck className="h-7 w-7 text-primary" /> Delivery Information
+          <form onSubmit={handlePayment} className="space-y-6">
+            <Card className="border shadow-lg rounded-[2rem] overflow-hidden">
+              <CardHeader className="bg-primary/5 p-6">
+                <CardTitle className="flex items-center gap-2 text-xl font-bold text-slate-800">
+                  <Truck className="h-6 w-6 text-primary" /> Delivery Information
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-8 space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-sm font-bold uppercase tracking-widest text-slate-400">Full Name / Institution</Label>
-                    <Input id="name" name="name" required value={formData.name} onChange={handleInputChange} className="h-12 rounded-xl border-slate-100" />
+              <CardContent className="p-6 space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-1">
+                    <Label htmlFor="name" className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Name / Institution</Label>
+                    <Input id="name" name="name" required value={formData.name} onChange={handleInputChange} className="h-10 rounded-lg border-slate-100" />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-sm font-bold uppercase tracking-widest text-slate-400">Professional Email</Label>
-                    <Input id="email" name="email" type="email" required value={formData.email} onChange={handleInputChange} className="h-12 rounded-xl border-slate-100" />
+                  <div className="space-y-1">
+                    <Label htmlFor="email" className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Email</Label>
+                    <Input id="email" name="email" type="email" required value={formData.email} onChange={handleInputChange} className="h-10 rounded-lg border-slate-100" />
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-sm font-bold uppercase tracking-widest text-slate-400">Contact Number</Label>
-                  <Input id="phone" name="phone" type="tel" required value={formData.phone} onChange={handleInputChange} className="h-12 rounded-xl border-slate-100" />
+                <div className="space-y-1">
+                  <Label htmlFor="phone" className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Phone</Label>
+                  <Input id="phone" name="phone" type="tel" required value={formData.phone} onChange={handleInputChange} className="h-10 rounded-lg border-slate-100" />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="address" className="text-sm font-bold uppercase tracking-widest text-slate-400">Full Shipping Address</Label>
-                  <Textarea id="address" name="address" required rows={3} value={formData.address} onChange={handleInputChange} className="rounded-xl border-slate-100 min-h-[120px]" />
-                </div>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="city" className="text-sm font-bold uppercase tracking-widest text-slate-400">City</Label>
-                    <Input id="city" name="city" required value={formData.city} onChange={handleInputChange} className="h-12 rounded-xl border-slate-100" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="zip" className="text-sm font-bold uppercase tracking-widest text-slate-400">ZIP Code</Label>
-                    <Input id="zip" name="zip" required value={formData.zip} onChange={handleInputChange} className="h-12 rounded-xl border-slate-100" />
-                  </div>
+                <div className="space-y-1">
+                  <Label htmlFor="address" className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Address</Label>
+                  <Textarea id="address" name="address" required rows={2} value={formData.address} onChange={handleInputChange} className="rounded-lg border-slate-100 min-h-[80px]" />
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-xl rounded-[3rem] overflow-hidden">
-              <CardHeader className="bg-primary/5 p-8">
-                <CardTitle className="flex items-center gap-3 text-2xl font-bold text-slate-800">
-                  <CreditCard className="h-7 w-7 text-primary" /> Payment Selection
+            <Card className="border shadow-lg rounded-[2rem] overflow-hidden">
+              <CardHeader className="bg-primary/5 p-6">
+                <CardTitle className="flex items-center gap-2 text-xl font-bold text-slate-800">
+                  <CreditCard className="h-6 w-6 text-primary" /> Payment Selection
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-8 space-y-8">
-                <div className="p-6 bg-primary/5 border border-primary/10 rounded-2xl flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="h-14 w-14 bg-white rounded-xl shadow-sm flex items-center justify-center">
-                      <Image src="https://picsum.photos/seed/payment/100/100" alt="Razorpay" width={40} height={40} className="grayscale opacity-50" />
+              <CardContent className="p-6 space-y-6">
+                <div className="p-4 bg-primary/5 border border-primary/10 rounded-xl flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 bg-white rounded-lg shadow-sm flex items-center justify-center">
+                      <Image src="https://picsum.photos/seed/payment/100/100" alt="Razorpay" width={24} height={24} className="grayscale opacity-50" />
                     </div>
                     <div>
-                      <p className="font-bold text-lg text-slate-800">Razorpay Secure</p>
-                      <p className="text-xs font-medium text-slate-400 uppercase tracking-widest">Cards, UPI, Netbanking</p>
+                      <p className="font-bold text-md text-slate-800">Razorpay Secure</p>
                     </div>
                   </div>
-                  <ShieldCheck className="h-8 w-8 text-primary" />
+                  <ShieldCheck className="h-6 w-6 text-primary" />
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full h-16 text-xl rounded-full bg-primary text-white hover:bg-primary/90 font-black shadow-xl shadow-primary/20"
+                  className="w-full h-14 text-lg rounded-full bg-primary text-white hover:bg-primary/90 font-black shadow-lg"
                   disabled={loading}
                 >
-                  {loading ? 'Validating Order...' : `Pay ₹${cartTotal.toFixed(2)}`}
+                  {loading ? 'Processing...' : `Pay ₹${cartTotal.toFixed(2)}`}
                 </Button>
-                <p className="text-center text-xs font-bold text-slate-400 uppercase tracking-tighter">
-                  Encrypted transactions powered by Razorpay for maximum supply chain security.
-                </p>
               </CardContent>
             </Card>
           </form>
         </div>
 
         <div>
-          <Card className="sticky top-32 border-none shadow-2xl rounded-[3rem] overflow-hidden">
-            <CardHeader className="bg-slate-800 p-8">
-              <CardTitle className="flex items-center gap-3 text-2xl font-bold text-white">
-                <ShoppingCart className="h-7 w-7" /> Order Summary
+          <Card className="sticky top-32 border shadow-xl rounded-[2rem] overflow-hidden">
+            <CardHeader className="bg-slate-800 p-6">
+              <CardTitle className="flex items-center gap-2 text-xl font-bold text-white">
+                <ShoppingCart className="h-6 w-6" /> Order Summary
               </CardTitle>
             </CardHeader>
-            <CardContent className="p-8 divide-y divide-slate-100">
-              <div className="max-h-[400px] overflow-y-auto pr-2 space-y-6 mb-8 scrollbar-hide">
+            <CardContent className="p-6 divide-y divide-slate-100">
+              <div className="max-h-[300px] overflow-y-auto pr-2 space-y-4 mb-6 scrollbar-hide">
                 {cart.map(item => (
-                  <div key={item.id} className="py-2 flex justify-between gap-6 items-center">
-                    <div className="flex gap-4 items-center">
-                      <div className="relative h-16 w-16 bg-slate-50 rounded-2xl overflow-hidden shrink-0 border border-slate-100">
+                  <div key={item.id} className="py-1 flex justify-between gap-4 items-center">
+                    <div className="flex gap-3 items-center">
+                      <div className="relative h-12 w-12 bg-slate-50 rounded-xl overflow-hidden shrink-0 border border-slate-100">
                         <Image src={item.imageUrl} alt={item.name} fill className="object-cover" />
                       </div>
                       <div>
-                        <p className="font-bold text-slate-800 line-clamp-1">{item.name}</p>
-                        <p className="text-xs font-bold text-primary uppercase tracking-widest">Qty: {item.quantity}</p>
+                        <p className="font-bold text-slate-800 text-sm line-clamp-1">{item.name}</p>
+                        <p className="text-[10px] font-bold text-primary uppercase tracking-widest">Qty: {item.quantity}</p>
                       </div>
                     </div>
-                    <p className="font-black text-slate-800">₹{(item.price * item.quantity).toFixed(2)}</p>
+                    <p className="font-black text-slate-800 text-sm">₹{(item.price * item.quantity).toFixed(2)}</p>
                   </div>
                 ))}
               </div>
               
-              <div className="pt-8 space-y-4">
-                <div className="flex justify-between text-slate-400 font-bold uppercase text-xs tracking-widest">
+              <div className="pt-6 space-y-2">
+                <div className="flex justify-between text-slate-400 font-bold uppercase text-[10px] tracking-widest">
                   <span>Subtotal</span>
-                  <span className="text-slate-800 text-base">₹{cartTotal.toFixed(2)}</span>
+                  <span className="text-slate-800 text-sm">₹{cartTotal.toFixed(2)}</span>
                 </div>
-                <div className="flex justify-between text-slate-400 font-bold uppercase text-xs tracking-widest">
-                  <span>Delivery</span>
-                  <span className="text-primary text-base">Complimentary</span>
-                </div>
-                <Separator className="my-6" />
+                <Separator className="my-4" />
                 <div className="flex justify-between items-center">
-                  <span className="text-xl font-bold text-slate-800">Grand Total</span>
-                  <span className="text-4xl font-black text-slate-800">₹{cartTotal.toFixed(2)}</span>
+                  <span className="text-lg font-bold text-slate-800">Total</span>
+                  <span className="text-2xl font-black text-slate-800">₹{cartTotal.toFixed(2)}</span>
                 </div>
               </div>
             </CardContent>
