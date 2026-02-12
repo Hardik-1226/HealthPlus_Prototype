@@ -37,7 +37,18 @@ export default function ProductDetailsPage() {
 
   const relatedProducts = useMemo(() => {
     if (!product) return [];
-    return PRODUCTS.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
+    
+    // First, try to find products in the same category
+    let matches = PRODUCTS.filter(p => p.category === product.category && p.id !== product.id);
+    
+    // If we have fewer than 5, add products from other categories to fill up to 5
+    if (matches.length < 5) {
+      const others = PRODUCTS.filter(p => p.category !== product.category && p.id !== product.id);
+      const shuffledOthers = [...others].sort(() => 0.5 - Math.random());
+      matches = [...matches, ...shuffledOthers.slice(0, 5 - matches.length)];
+    }
+    
+    return matches.slice(0, 5);
   }, [product]);
 
   if (!product) {
@@ -115,7 +126,7 @@ export default function ProductDetailsPage() {
             </div>
           </div>
 
-          {/* Primary Action (Add to Cart) - Moved ABOVE description as requested */}
+          {/* Primary Action (Add to Cart) */}
           <div className="space-y-4 py-4 border-y border-slate-100">
             <div className="flex items-center gap-4">
               <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Quantity</span>
@@ -245,8 +256,8 @@ export default function ProductDetailsPage() {
         <section className="pt-16 border-t border-slate-100">
           <div className="flex justify-between items-end mb-8">
             <div>
-              <h2 className="text-2xl font-black text-slate-800">Related Products</h2>
-              <p className="text-slate-400 text-sm font-bold uppercase tracking-widest mt-1">From {product.category}</p>
+              <h2 className="text-2xl font-black text-slate-800">Recommended for You</h2>
+              <p className="text-slate-400 text-sm font-bold uppercase tracking-widest mt-1">Discover more products</p>
             </div>
             <Link href="/products">
               <Button variant="link" className="text-primary font-bold group">
@@ -255,7 +266,7 @@ export default function ProductDetailsPage() {
             </Link>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {relatedProducts.map(rel => (
               <Link key={rel.id} href={`/products/${rel.id}`}>
                 <Card className="hover:shadow-xl transition-all duration-500 h-full border-none shadow-md rounded-[2rem] overflow-hidden group bg-white">
@@ -264,10 +275,10 @@ export default function ProductDetailsPage() {
                       <Image src={rel.imageUrl} alt={rel.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
                     <div className="p-4">
-                      <h3 className="font-bold text-slate-800 group-hover:text-primary transition-colors text-sm line-clamp-1">{rel.name}</h3>
+                      <h3 className="font-bold text-slate-800 group-hover:text-primary transition-colors text-xs line-clamp-1">{rel.name}</h3>
                       <div className="flex items-center gap-2 mt-1">
-                        <span className="text-primary font-black text-md">₹{rel.price.toFixed(2)}</span>
-                        <span className="text-slate-400 line-through text-[10px] font-bold">₹{rel.mrp.toFixed(2)}</span>
+                        <span className="text-primary font-black text-sm">₹{rel.price.toFixed(2)}</span>
+                        <span className="text-slate-400 line-through text-[9px] font-bold">₹{rel.mrp.toFixed(2)}</span>
                       </div>
                     </div>
                   </CardContent>
