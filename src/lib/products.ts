@@ -5,6 +5,7 @@ export interface Product {
   description: string;
   price: number;
   mrp: number;
+  packSize: string;
   imageUrl: string;
   images?: string[];
   composition?: string[];
@@ -16,196 +17,204 @@ export interface Product {
 
 export const PRODUCTS: Product[] = [
   {
-    id: 'zydofia-q10',
-    name: 'Zydofia-Q10 Tablets',
-    category: 'Nutraceuticals',
-    description: 'Zydofia-Q10 is a nutraceutical formulation designed to improve cellular energy, fertility, heart health, and overall well-being. Coenzyme Q10 (CoQ10) plays a vital role in energy production in mitochondria, while antioxidants like Lycopene and Selenium protect cells from oxidative stress. Omega-3 fatty acids and Zinc support reproductive health, cardiovascular function, and immunity.',
-    price: 450.00,
-    mrp: 599.00,
+    id: 'pegno-d3-nano',
+    name: 'PEGNO D3 NANO SHOTS',
+    category: 'Vitamins & Supplements',
+    description: 'High-concentration Vitamin D3 supplement in a convenient nano-shot format for rapid absorption and correction of Vitamin D deficiency.',
+    price: 75.00,
+    mrp: 91.88,
+    packSize: '4x5ml',
     imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600',
-    images: [
-      'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1471864190281-ad5fe9ac0724?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1631549916768-4119b295f926?auto=format&fit=crop&q=80&w=600'
-    ],
+    composition: ['Vitamin D3 (Cholecalciferol) - 60,000 IU'],
+    benefits: ['Supports bone health', 'Enhances immunity', 'Rapid absorption'],
+    indications: ['Vitamin D deficiency', 'Osteoporosis', 'General weakness'],
+    dosage: 'As advised by physician: 1 shot weekly or as prescribed.',
+    precautions: ['Monitor calcium levels', 'Not for daily use unless prescribed']
+  },
+  {
+    id: 'pegno-d3-drop',
+    name: 'PEGNO D3 DROP',
+    category: 'Pediatric Care',
+    description: 'Specially formulated Vitamin D3 drops for infants and children to support healthy growth and development of bones and teeth.',
+    price: 110.00,
+    mrp: 135.00,
+    packSize: '15ml',
+    imageUrl: 'https://images.unsplash.com/photo-1471864190281-ad5fe9ac0724?auto=format&fit=crop&q=80&w=600',
+    composition: ['Vitamin D3 (Cholecalciferol) - 800 IU'],
+    benefits: ['Supports healthy growth', 'Safe for children', 'Easy administration'],
+    indications: ['Vitamin D deficiency in infants', 'Rickets prevention'],
+    dosage: 'As advised by physician: Usually 1ml daily or as directed.',
+    precautions: ['Do not exceed recommended dose']
+  },
+  {
+    id: 'p-germina',
+    name: 'P GERMINA',
+    category: 'Gastrointestinal',
+    description: 'Probiotic respules containing Bacillus Clausii to restore healthy gut flora and support digestive health during and after antibiotic treatment.',
+    price: 50.00,
+    mrp: 61.00,
+    packSize: '10x5ml',
+    imageUrl: 'https://images.unsplash.com/photo-1550572017-ed200f545dec?auto=format&fit=crop&q=80&w=600',
+    composition: ['Bacillus Clausii - 2 Billion Spores (Respules)'],
+    benefits: ['Restores gut flora', 'Relieves diarrhea', 'Supports immunity'],
+    indications: ['Diarrhea', 'Post-antibiotic gut recovery', 'Dysbiosis'],
+    dosage: 'As advised by physician: 1-2 respules daily.',
+    precautions: ['For oral use only', 'Do not inject']
+  },
+  {
+    id: 'canq-300',
+    name: 'CANQ-300',
+    category: 'Nutraceuticals',
+    description: 'Premium nutraceutical formulation for cardiac health, fertility, and cellular energy, featuring high-dose Coenzyme Q10 and antioxidants.',
+    price: 1150.00,
+    mrp: 1334.00,
+    packSize: '1x10 cap',
+    imageUrl: 'https://images.unsplash.com/photo-1631549916768-4119b295f926?auto=format&fit=crop&q=80&w=600',
     composition: [
-      'Coenzyme Q10',
-      'L-Carnitine',
-      'Lycopene',
-      'Omega-3 Fatty Acids',
-      'Selenium',
-      'Zinc',
-      'Essential Vitamins & Minerals'
+      'Coenzyme Q10 (UBIDECARENONE 300MG)',
+      'LYCOPEN',
+      'OMEGA 3'
     ],
     benefits: [
-      'Supports Male Fertility: Enhances sperm motility, count, and quality.',
-      'Boosts Energy Levels: CoQ10 improves mitochondrial energy production.',
-      'Cardiac Health: Promotes better heart function and circulation.',
-      'Powerful Antioxidant Protection: Reduces oxidative damage and stress.',
-      'Reproductive Wellness: Improves overall reproductive health.',
-      'Immunity & Vitality: Strengthens natural defense mechanisms.'
+      'Improves heart function',
+      'Enhances fertility',
+      'Powerful antioxidant protection'
     ],
     indications: [
-      'Male infertility and low sperm motility (Asthenozoospermia)',
-      'Oxidative stress-related infertility',
-      'General weakness and fatigue',
-      'Cardiovascular health support',
-      'As an adjunct in reproductive treatments'
+      'Male/Female infertility',
+      'Cardiovascular health',
+      'Oxidative stress'
     ],
-    dosage: '1 tablet daily after meals, or as directed by your doctor.',
-    precautions: [
-      'Use under medical supervision.',
-      'Not recommended for children unless prescribed.',
-      'Pregnant and lactating women should consult a doctor before use.'
-    ]
+    dosage: 'As advised by physician: 1 capsule daily after meals.',
+    precautions: ['Consult doctor before use if pregnant']
   },
   {
-    id: 'hp-pain-reliever',
-    name: 'HP-Pain Reliever 500',
-    category: 'Analgesics',
-    description: 'Advanced analgesic and antipyretic formulation for rapid relief from acute pain and high fever. Designed for maximum bioavailability and gentle gastrointestinal profile.',
-    price: 45.00,
-    mrp: 65.00,
-    imageUrl: 'https://images.unsplash.com/photo-1550572017-ed200f545dec?auto=format&fit=crop&q=80&w=600',
-    images: [
-      'https://images.unsplash.com/photo-1550572017-ed200f545dec?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=600'
-    ],
-    composition: ['Paracetamol 500mg'],
-    benefits: [
-      'Rapid Pain Relief: Quickly targets muscle and joint pain.',
-      'Fever Reduction: Effective antipyretic action.',
-      'Safe Profile: Well-tolerated in institutional settings.'
-    ],
-    indications: ['Fever', 'Headache', 'Muscle pain', 'Post-operative recovery'],
-    dosage: '1-2 tablets every 4-6 hours, not exceeding 8 tablets in 24 hours.',
-    precautions: ['Avoid alcohol consumption.', 'Liver health monitoring required for long-term use.']
-  },
-  {
-    id: 'hpi-amox-250',
-    name: 'HPI-Amox 250 Capsules',
-    category: 'Antibiotics',
-    description: 'Broad-spectrum penicillin antibiotic used to treat bacterial infections. Effective against a wide range of gram-positive and gram-negative organisms.',
-    price: 125.00,
-    mrp: 180.00,
-    imageUrl: 'https://images.unsplash.com/photo-1576086213369-97a306dca664?auto=format&fit=crop&q=80&w=600',
-    images: [
-      'https://images.unsplash.com/photo-1576086213369-97a306dca664?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=600'
-    ],
-    composition: ['Amoxicillin 250mg'],
-    benefits: [
-      'Wide Spectrum: Effective against various bacterial strains.',
-      'High Bioavailability: Fast absorption for rapid treatment.',
-      'Stable Formulation: Long shelf-life for hospital stock.'
-    ],
-    indications: ['Respiratory tract infections', 'Skin infections', 'UTIs', 'Dental abscesses'],
-    dosage: 'One capsule every 8 hours or as prescribed.',
-    precautions: ['Check for penicillin allergy.', 'Complete the full course even if feeling better.']
-  },
-  {
-    id: 'meta-control-500',
-    name: 'Meta-Control 500mg',
-    category: 'Antidiabetics',
-    description: 'First-line medication for the treatment of type 2 diabetes. Helps control blood sugar levels by improving insulin sensitivity.',
-    price: 85.00,
-    mrp: 110.00,
-    imageUrl: 'https://images.unsplash.com/photo-1626716493137-b67fe9501e76?auto=format&fit=crop&q=80&w=600',
-    images: [
-      'https://images.unsplash.com/photo-1626716493137-b67fe9501e76?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1631549916768-4119b295f926?auto=format&fit=crop&q=80&w=600'
-    ],
-    composition: ['Metformin Hydrochloride 500mg'],
-    benefits: [
-      'Blood Sugar Management: Effective long-term glucose control.',
-      'Weight Neutral: Does not cause weight gain.',
-      'Cardiovascular Benefits: Associated with lower cardiac risk.'
-    ],
-    indications: ['Type 2 Diabetes Mellitus', 'Polycystic Ovary Syndrome (PCOS)'],
-    dosage: 'Start with 500mg once or twice daily with meals.',
-    precautions: ['Monitor renal function.', 'Avoid in cases of severe kidney disease.']
-  },
-  {
-    id: 'atorva-hpi-10',
-    name: 'Atorva-HPI 10mg',
-    category: 'Cardiovascular',
-    description: 'Statin medication used to prevent cardiovascular disease and treat abnormal lipid levels. Lowers LDL cholesterol and triglycerides.',
-    price: 180.00,
-    mrp: 240.00,
-    imageUrl: 'https://images.unsplash.com/photo-1631549916768-4119b295f926?auto=format&fit=crop&q=80&w=600',
-    images: [
-      'https://images.unsplash.com/photo-1631549916768-4119b295f926?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1550572017-ed200f545dec?auto=format&fit=crop&q=80&w=600'
-    ],
-    composition: ['Atorvastatin 10mg'],
-    benefits: [
-      'Cholesterol Control: Significantly reduces "bad" cholesterol.',
-      'Plaque Stability: Reduces the risk of cardiac events.',
-      'Daily Convenience: Simple once-daily dosage.'
-    ],
-    indications: ['Hypercholesterolemia', 'Primary and secondary prevention of MI'],
-    dosage: '10mg once daily in the evening.',
-    precautions: ['Monitor liver enzymes.', 'Report unexplained muscle pain immediately.']
-  },
-  {
-    id: 'ferro-boost-xt',
-    name: 'Ferro-Boost XT Syrup',
-    category: 'Nutraceuticals',
-    description: 'Iron supplement with Folic Acid and Vitamin B12 to treat iron deficiency anemia and improve hemoglobin levels.',
-    price: 155.00,
-    mrp: 199.00,
-    imageUrl: 'https://images.unsplash.com/photo-1471864190281-ad5fe9ac0724?auto=format&fit=crop&q=80&w=600',
-    composition: ['Ferrous Ascorbate', 'Folic Acid', 'Zinc', 'Vitamin B12'],
-    benefits: ['Rapid Iron Absorption', 'Improved Energy', 'Better Hemoglobin'],
-    indications: ['Iron deficiency anemia', 'Pregnancy support'],
-    dosage: '10ml twice daily or as prescribed.',
-    precautions: ['Keep out of reach of children.']
-  },
-  {
-    id: 'calci-strong-d3',
-    name: 'Calci-Strong D3 Tablets',
-    category: 'Nutraceuticals',
-    description: 'Calcium and Vitamin D3 supplement for bone health and osteoporosis prevention.',
-    price: 120.00,
-    mrp: 160.00,
-    imageUrl: 'https://images.unsplash.com/photo-1584362946021-d00474668853?auto=format&fit=crop&q=80&w=600',
-    composition: ['Calcium Citrate', 'Vitamin D3', 'Magnesium'],
-    benefits: ['Strengthens bones', 'Prevents fractures', 'Supports muscle function'],
-    indications: ['Calcium deficiency', 'Osteoporosis', 'Bone healing'],
-    dosage: '1 tablet daily at bedtime.',
-    precautions: ['Avoid excessive intake.']
-  },
-  {
-    id: 'vit-c-chew',
-    name: 'Vit-C Chew 500mg',
-    category: 'Nutraceuticals',
-    description: 'Chewable Vitamin C tablets for immunity boosting and antioxidant protection.',
-    price: 65.00,
-    mrp: 85.00,
+    id: 'herbvol-plus',
+    name: 'HERBVOL PLUS',
+    category: 'Respiratory Care',
+    description: 'Natural wellness softgel capsules designed for inhalation or oral use to provide relief from nasal congestion and respiratory discomfort.',
+    price: 110.00,
+    mrp: 135.00,
+    packSize: '1x10 cap',
     imageUrl: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=600',
-    composition: ['Vitamin C (Ascorbic Acid) 500mg'],
-    benefits: ['Boosts Immunity', 'Skin Health', 'Antioxidant'],
-    indications: ['Common cold', 'Immunity support', 'Scurvy'],
-    dosage: '1 chewable tablet daily.',
-    precautions: ['None for adults.']
+    composition: [
+      'Camphor',
+      'Eucalyptol',
+      'Menthol',
+      'Terpinel'
+    ],
+    benefits: ['Instant nasal relief', 'Natural ingredients', 'Eases breathing'],
+    indications: ['Common cold', 'Nasal congestion', 'Sinusitis'],
+    dosage: 'As advised by physician: Use as an inhalant or as directed.',
+    precautions: ['Avoid contact with eyes', 'Keep out of reach of children']
   },
   {
-    id: 'joint-relief-plus',
-    name: 'Joint-Relief Plus',
-    category: 'Analgesics',
-    description: 'Topical gel for rapid relief from joint and muscle pain associated with arthritis and sports injuries.',
-    price: 95.00,
-    mrp: 125.00,
-    imageUrl: 'https://images.unsplash.com/photo-1555633514-abcee6ad93e1?auto=format&fit=crop&q=80&w=600',
-    composition: ['Diclofenac Diethylamine', 'Menthol', 'Linseed Oil'],
-    benefits: ['Localized pain relief', 'Reduced inflammation', 'Fast acting'],
-    indications: ['Arthritis', 'Sprains', 'Muscle soreness'],
-    dosage: 'Apply to affected area 3-4 times daily.',
-    precautions: ['For external use only.']
+    id: 'ecopan-d',
+    name: 'ECOPAN D',
+    category: 'Gastrointestinal',
+    description: 'Effective combination of a proton pump inhibitor and a prokinetic agent for the treatment of acid reflux, GERD, and associated nausea.',
+    price: 190.00,
+    mrp: 230.00,
+    packSize: '1x15 cap',
+    imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600',
+    composition: ['Pentaprazole', 'Domperidone'],
+    benefits: ['Reduces acidity', 'Stops nausea', 'Prevents heartburn'],
+    indications: ['Acid reflux', 'GERD', 'Dyspepsia'],
+    dosage: 'As advised by physician: Usually 1 capsule daily before breakfast.',
+    precautions: ['Monitor long-term use', 'Avoid in severe renal impairment']
+  },
+  {
+    id: 'ecopan-40',
+    name: 'ECOPAN-40',
+    category: 'Gastrointestinal',
+    description: 'Standard strength Pantoprazole 40mg for the effective management of stomach ulcers, hyperacidity, and esophageal erosion.',
+    price: 175.00,
+    mrp: 215.00,
+    packSize: '1x15 cap',
+    imageUrl: 'https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=600',
+    composition: ['Pentaprazole 40 MG'],
+    benefits: ['Long-lasting relief', 'Heals stomach ulcers', 'Controls gastric acid'],
+    indications: ['Peptic ulcers', 'Zollinger-Ellison syndrome', 'Hyperacidity'],
+    dosage: 'As advised by physician: 1 tablet daily or as prescribed.',
+    precautions: ['Inform doctor of liver issues']
+  },
+  {
+    id: 'hpi-omega',
+    name: 'HPI OMEGA',
+    category: 'Nutraceuticals',
+    description: 'High-quality Omega-3 fish oil supplement rich in EPA and DHA to support cardiovascular health, brain function, and joint mobility.',
+    price: 1050.00,
+    mrp: 1299.00,
+    packSize: 'pack of 30 cap',
+    imageUrl: 'https://images.unsplash.com/photo-1626716493137-b67fe9501e76?auto=format&fit=crop&q=80&w=600',
+    composition: ['Omega 3 fish oil (EPA+DHA)'],
+    benefits: ['Supports heart health', 'Improves brain function', 'Reduces joint inflammation'],
+    indications: ['High cholesterol', 'Cognitive support', 'Arthritis adjunct'],
+    dosage: 'As advised by physician: 1 capsule daily after meals.',
+    precautions: ['Monitor if taking blood thinners']
+  },
+  {
+    id: 'durocal-d3',
+    name: 'DUROCAL D3 TAB',
+    category: 'Bone Health',
+    description: 'Balanced formulation of Calcium and Vitamin D3 to ensure optimal bone mineral density and prevent bone-related disorders.',
+    price: 150.00,
+    mrp: 185.00,
+    packSize: '1x15 cap',
+    imageUrl: 'https://images.unsplash.com/photo-1584362946021-d00474668853?auto=format&fit=crop&q=80&w=600',
+    composition: [
+      'Calcium Carbonate 500mg',
+      'Vitamin D3 250iu'
+    ],
+    benefits: ['Strengthens bones', 'Improves calcium absorption', 'Prevents fractures'],
+    indications: ['Calcium deficiency', 'Osteoporosis', 'Pregnancy support'],
+    dosage: 'As advised by physician: 1 tablet daily.',
+    precautions: ['Avoid in cases of kidney stones']
+  },
+  {
+    id: 'cefram-500',
+    name: 'CEFRAM 500 TAB',
+    category: 'Antibiotics',
+    description: 'Broad-spectrum cephalosporin antibiotic for the effective treatment of respiratory, urinary, and soft tissue bacterial infections.',
+    price: 460.00,
+    mrp: 549.00,
+    packSize: '1x 10 tab',
+    imageUrl: 'https://images.unsplash.com/photo-1576086213369-97a306dca664?auto=format&fit=crop&q=80&w=600',
+    composition: ['Cefuroxime Axetil 500 mg'],
+    benefits: ['Broad spectrum efficacy', 'High stability', 'Rapid recovery'],
+    indications: ['Pneumonia', 'UTI', 'Skin infections', 'Sinusitis'],
+    dosage: 'As advised by physician: 1 tablet twice daily for 5-10 days.',
+    precautions: ['Complete full course', 'Check for allergy to cephalosporins']
+  },
+  {
+    id: 'ecoliv-300',
+    name: 'ECOLIV 300 TAB',
+    category: 'Hepatology',
+    description: 'Specialized medication for liver health, used to dissolve cholesterol gallstones and treat chronic liver diseases like primary biliary cirrhosis.',
+    price: 460.00,
+    mrp: 549.00,
+    packSize: '1X10TAB',
+    imageUrl: 'https://images.unsplash.com/photo-1550572017-ed200f545dec?auto=format&fit=crop&q=80&w=600',
+    composition: ['Ursodeoxycholic acid I.P 300 MG'],
+    benefits: ['Dissolves gallstones', 'Protects liver cells', 'Improves bile flow'],
+    indications: ['Gallstones', 'Liver cirrhosis', 'Alcoholic liver disease'],
+    dosage: 'As advised by physician: As directed by the doctor.',
+    precautions: ['Monitor liver function regularly']
+  },
+  {
+    id: 'eco-zn-drip',
+    name: 'ECO ZN DRIP INJECTION',
+    category: 'Critical Care',
+    description: 'Intravenous Zinc Chloride injection for intensive care patients requiring essential trace element supplementation.',
+    price: 650.00,
+    mrp: 790.00,
+    packSize: '10 ML',
+    imageUrl: 'https://images.unsplash.com/photo-1579152276532-535c21af1aa5?auto=format&fit=crop&q=80&w=600',
+    composition: ['ZINC CHLORIDE INJECTION 2.09MG'],
+    benefits: ['Essential for immunity', 'Aids wound healing', 'Crucial in critical care'],
+    indications: ['Zinc deficiency', 'Total Parenteral Nutrition (TPN)', 'Critical illness'],
+    dosage: 'As advised by physician: Intravenous infusion as directed.',
+    precautions: ['For institutional use only', 'Administer slowly']
   }
 ];
 
