@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ShoppingCart, Heart, Search, Menu, User, Instagram, Twitter, Facebook, Phone, Mail, FileDown } from 'lucide-react';
+import { ShoppingCart, Menu, Instagram, Twitter, Facebook, Phone, Mail, FileDown } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -11,6 +11,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 export const Navbar = () => {
   const { cartCount } = useCart();
+  const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full flex flex-col">
@@ -19,20 +20,20 @@ export const Navbar = () => {
         <div className="container mx-auto flex justify-between items-center text-xs font-medium">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
-              <Phone className="h-4 w-4" /> +91 (123) 456-7890
+              <Phone className="h-4 w-4" /> +91 9266903156
             </span>
             <span className="flex items-center gap-2">
               <Mail className="h-4 w-4" /> info@hpi.co.in
             </span>
           </div>
           <div className="flex items-center gap-5">
-            <Link href="https://facebook.com" target="_blank" className="hover:opacity-80 transition-opacity">
+            <Link href="#" target="_blank" className="hover:opacity-80 transition-opacity">
               <Facebook className="h-5 w-5" />
             </Link>
-            <Link href="https://twitter.com" target="_blank" className="hover:opacity-80 transition-opacity">
+            <Link href="#" target="_blank" className="hover:opacity-80 transition-opacity">
               <Twitter className="h-5 w-5" />
             </Link>
-            <Link href="https://instagram.com" target="_blank" className="hover:opacity-80 transition-opacity">
+            <Link href="#" target="_blank" className="hover:opacity-80 transition-opacity">
               <Instagram className="h-5 w-5" />
             </Link>
           </div>
@@ -43,7 +44,7 @@ export const Navbar = () => {
       <div className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 flex h-24 items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <Sheet>
+            <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
                   <Menu className="h-6 w-6" />
@@ -51,10 +52,34 @@ export const Navbar = () => {
               </SheetTrigger>
               <SheetContent side="left" className="w-[280px]">
                 <div className="flex flex-col gap-4 mt-8">
-                  <Link href="/" className="text-lg font-semibold hover:text-primary">Home</Link>
-                  <Link href="/products" className="text-lg font-semibold hover:text-primary">Products</Link>
-                  <Link href="/about" className="text-lg font-semibold hover:text-primary">About Us</Link>
-                  <Link href="/contact" className="text-lg font-semibold hover:text-primary">Contact</Link>
+                  <Link 
+                    href="/" 
+                    onClick={() => setOpen(false)}
+                    className="text-lg font-semibold hover:text-primary"
+                  >
+                    Home
+                  </Link>
+                  <Link 
+                    href="/products" 
+                    onClick={() => setOpen(false)}
+                    className="text-lg font-semibold hover:text-primary"
+                  >
+                    Products
+                  </Link>
+                  <Link 
+                    href="/about" 
+                    onClick={() => setOpen(false)}
+                    className="text-lg font-semibold hover:text-primary"
+                  >
+                    About Us
+                  </Link>
+                  <Link 
+                    href="/contact" 
+                    onClick={() => setOpen(false)}
+                    className="text-lg font-semibold hover:text-primary"
+                  >
+                    Contact
+                  </Link>
                   <Button variant="outline" className="mt-4 gap-2">
                     <FileDown className="h-4 w-4" /> Download Brochure
                   </Button>
@@ -62,8 +87,8 @@ export const Navbar = () => {
               </SheetContent>
             </Sheet>
             <Link href="/" className="flex items-center gap-3">
-              <div className="h-14 w-14 rounded-full bg-primary flex items-center justify-center shadow-md">
-                <span className="text-white font-bold text-3xl">H</span>
+              <div className="h-16 w-16 rounded-full bg-primary flex items-center justify-center shadow-md">
+                <span className="text-white font-bold text-4xl">H</span>
               </div>
               <span className="font-headline font-bold text-4xl tracking-tighter hidden sm:inline-block">
                 Health<span className="text-primary">Plus</span>
