@@ -103,8 +103,8 @@ export default function Home() {
                   <p className="text-xs md:text-lg text-slate-500 max-w-md mx-auto font-bold leading-relaxed">
                     Reliable pharmaceutical products for hospitals, clinics & healthcare professionals across India.
                   </p>
-                  <div className="pt-4">
-                    <Button asChild size="lg" className="rounded-full px-12 h-14 md:h-16 text-sm md:text-lg bg-primary text-white hover:bg-primary/90 shadow-2xl transition-all font-black uppercase tracking-widest border-4 border-white cursor-pointer relative z-50">
+                  <div className="pt-4 relative z-[60]">
+                    <Button asChild size="lg" className="rounded-full px-12 h-14 md:h-16 text-sm md:text-lg bg-primary text-white hover:bg-primary/90 shadow-2xl transition-all font-black uppercase tracking-widest border-4 border-white cursor-pointer">
                       <Link href="/products">
                         Explore Our Products
                       </Link>
@@ -149,13 +149,13 @@ export default function Home() {
           designIndex === 1 ? "opacity-100 z-20" : "opacity-0 z-0 pointer-events-none"
         )}>
           <section className="relative h-full flex flex-col items-center justify-center px-4 overflow-hidden bg-slate-50">
-            {/* Doctor Background */}
+            {/* Doctor Background - Shifted left to avoid right-aligned text */}
             <div className="absolute inset-0 w-full opacity-30 lg:opacity-40 z-0">
               <Image 
                 src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1920"
                 alt="Doctor Background"
                 fill
-                className="object-cover object-center"
+                className="object-cover object-left"
               />
             </div>
 
@@ -188,8 +188,8 @@ export default function Home() {
                   ))}
                 </div>
 
-                <div className="pt-8 md:pt-10">
-                  <Button asChild size="lg" className="rounded-full px-10 h-12 md:h-14 text-xs md:text-md bg-[#2d5a63] text-white hover:bg-[#2d5a63]/90 shadow-xl font-bold uppercase tracking-widest border-2 border-white/20 cursor-pointer relative z-50">
+                <div className="pt-8 md:pt-10 relative z-[60]">
+                  <Button asChild size="lg" className="rounded-full px-10 h-12 md:h-14 text-xs md:text-md bg-[#2d5a63] text-white hover:bg-[#2d5a63]/90 shadow-xl font-bold uppercase tracking-widest border-2 border-white/20 cursor-pointer">
                     <Link href="/products">
                       Shop our Products
                     </Link>
@@ -199,8 +199,8 @@ export default function Home() {
             </div>
 
             {/* Bottom Contact Bar */}
-            <div className="absolute bottom-6 md:bottom-10 w-full px-4 z-40 pointer-events-none">
-              <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-3 md:gap-12 pointer-events-auto">
+            <div className="absolute bottom-6 md:bottom-10 w-full px-4 z-40">
+              <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-3 md:gap-12">
                  <div className="flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 md:px-6 py-2.5 rounded-full shadow-lg border border-white/50 w-full md:w-auto justify-center transition-all hover:bg-white">
                     <div className="bg-[#2d5a63] p-1.5 rounded-full shrink-0"><Mail className="h-3.5 w-3.5 text-white" /></div>
                     <span className="text-[10px] md:text-sm font-black text-slate-700 truncate">innovateplushealth@gmail.com</span>
