@@ -83,7 +83,7 @@ export default function Home() {
 
             <div className="container relative z-30 mx-auto px-4 flex flex-col items-center">
               <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-8 lg:gap-0">
-                <div className="hidden lg:block w-[300px] h-[450px] relative rounded-lg overflow-hidden shadow-2xl z-10 opacity-90 border-4 border-white">
+                <div className="hidden lg:block w-[300px] h-[450px] relative rounded-lg overflow-hidden shadow-2xl z-0 opacity-90 border-4 border-white">
                   <Image 
                     src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600"
                     alt="Wellness Illustration"
@@ -111,7 +111,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="hidden lg:flex flex-col gap-10 items-center justify-center z-10">
+                <div className="hidden lg:flex flex-col gap-10 items-center justify-center z-0">
                   <div className="h-40 w-40 rounded-full border-8 border-white shadow-2xl overflow-hidden relative">
                     <Image 
                       src="https://images.unsplash.com/photo-1576091160550-2173dad99a01?auto=format&fit=crop&q=80&w=300"
@@ -152,7 +152,7 @@ export default function Home() {
                 src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1920"
                 alt="Doctor Background"
                 fill
-                className="object-cover object-left lg:translate-x-[-55%] lg:scale-110 transition-transform duration-700"
+                className="object-cover object-left lg:translate-x-[-20%] lg:scale-105 transition-transform duration-700"
               />
             </div>
 
