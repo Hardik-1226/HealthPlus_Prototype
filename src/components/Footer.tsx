@@ -1,13 +1,18 @@
+
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const getImageUrl = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageUrl || '';
 
   return (
     <footer className="bg-[#f8fcfd] border-t relative">
@@ -16,15 +21,14 @@ export const Footer = () => {
           {/* Left Column: Logo and Description */}
           <div className="space-y-6">
             <div className="flex flex-col items-center md:items-start gap-2">
-              <div className="h-20 w-20 flex items-center justify-center">
-                <svg viewBox="0 0 100 100" className="w-full h-full text-primary fill-current">
-                  <path d="M50 15 C30 15 15 30 15 50 C15 70 30 85 50 85 L50 80 C35 80 20 65 20 50 C20 35 35 20 50 20 C65 20 80 35 80 50 L85 50 C85 30 70 15 50 15 Z" fill="none" stroke="currentColor" strokeWidth="4" />
-                  <rect x="46" y="35" width="8" height="30" rx="1" />
-                  <rect x="35" y="46" width="30" height="8" rx="1" />
-                  <circle cx="50" cy="30" r="4" />
-                  <path d="M50 35 L50 48 M50 38 L42 42 M50 38 L58 42" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                  <path d="M25 80 Q50 95 75 80 L73 78 Q50 90 27 78 Z" />
-                </svg>
+              <div className="h-20 w-20 relative flex items-center justify-center">
+                <Image 
+                  src={getImageUrl('site-logo')} 
+                  alt="Health Plus Innovation Logo" 
+                  fill 
+                  className="object-contain"
+                  data-ai-hint="company logo"
+                />
               </div>
               <div className="text-center md:text-left">
                 <h2 className="font-headline font-black text-primary text-lg tracking-tighter uppercase">
