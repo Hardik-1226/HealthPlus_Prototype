@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -25,18 +24,18 @@ export default function Home() {
   const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageUrl || '';
 
   const partners = [
-    { name: "Max Gurgaon", text: "Hospital Partner" },
-    { name: "Max BLK", text: "Hospital Partner" },
-    { name: "Max Saket", text: "Hospital Partner" },
-    { name: "Yatharth Faridabad", text: "Hospital Partner" },
-    { name: "Yatharth Sector 110", text: "Hospital Partner" },
-    { name: "Yatharth Bisrakh", text: "Hospital Partner" },
-    { name: "Yatharth Greater Noida", text: "Hospital Partner" },
-    { name: "Fortis Mohali", text: "Hospital Partner" },
-    { name: "Accord Faridabad", text: "Hospital Partner" },
-    { name: "Marengo Asia Faridabad", text: "Hospital Partner" },
-    { name: "Indian Spinal Injuries Centre", text: "Hospital Partner" },
-    { name: "CK Birla Hospital, Gurgaon", text: "Hospital Partner" },
+    { id: "partner-logo-max-gurgaon", name: "Max Gurgaon", text: "Hospital Partner" },
+    { id: "partner-logo-max-blk", name: "Max BLK", text: "Hospital Partner" },
+    { id: "partner-logo-max-saket", name: "Max Saket", text: "Hospital Partner" },
+    { id: "partner-logo-yatharth-faridabad", name: "Yatharth Faridabad", text: "Hospital Partner" },
+    { id: "partner-logo-yatharth-sector-110", name: "Yatharth Sector 110", text: "Hospital Partner" },
+    { id: "partner-logo-yatharth-bisrakh", name: "Yatharth Bisrakh", text: "Hospital Partner" },
+    { id: "partner-logo-yatharth-greater-noida", name: "Yatharth Greater Noida", text: "Hospital Partner" },
+    { id: "partner-logo-fortis-mohali", name: "Fortis Mohali", text: "Hospital Partner" },
+    { id: "partner-logo-accord-faridabad", name: "Accord Faridabad", text: "Hospital Partner" },
+    { id: "partner-logo-marengo-asia", name: "Marengo Asia Faridabad", text: "Hospital Partner" },
+    { id: "partner-logo-indian-spinal", name: "Indian Spinal Injuries Centre", text: "Hospital Partner" },
+    { id: "partner-logo-ck-birla", name: "CK Birla Hospital, Gurgaon", text: "Hospital Partner" },
   ];
 
   const featuredProducts = PRODUCTS.slice(0, 4);
@@ -213,7 +212,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hospital Network */}
+      {/* Our Trusted Partner */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-black text-slate-800 mb-6 uppercase tracking-tight">Our Trusted Partner</h2>
@@ -226,7 +225,7 @@ export default function Home() {
               <div key={index} className="flex flex-col items-center p-6 bg-slate-50 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 text-center space-y-4 group border border-slate-100">
                 <div className="relative h-16 w-24 md:h-20 md:w-32 opacity-70 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110">
                   <Image
-                    src={getImage('partner-logo-placeholder')}
+                    src={getImage(partner.id)}
                     alt={partner.name}
                     fill
                     className="object-contain"

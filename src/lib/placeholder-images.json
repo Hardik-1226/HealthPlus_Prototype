@@ -37,9 +37,75 @@
       "imageHint": "quality commitment"
     },
     {
-      "id": "partner-logo-placeholder",
-      "description": "General placeholder logo for Trusted Partners (Hospitals)",
-      "imageUrl": "https://images.unsplash.com/photo-1758922801699-09d8d788f90c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYXJ0bmVyJTIwbG9nb3xlbnwwfHx8fDE3NzEwNjYxMzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "id": "partner-logo-max-gurgaon",
+      "description": "Logo for Max Gurgaon Hospital",
+      "imageUrl": "/images/partner-max-gurgaon.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-max-blk",
+      "description": "Logo for Max BLK Hospital",
+      "imageUrl": "/images/partner-max-blk.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-max-saket",
+      "description": "Logo for Max Saket Hospital",
+      "imageUrl": "/images/partner-max-saket.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-yatharth-faridabad",
+      "description": "Logo for Yatharth Faridabad Hospital",
+      "imageUrl": "/images/partner-yatharth-faridabad.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-yatharth-sector-110",
+      "description": "Logo for Yatharth Sector 110 Hospital",
+      "imageUrl": "/images/partner-yatharth-sector-110.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-yatharth-bisrakh",
+      "description": "Logo for Yatharth Bisrakh Hospital",
+      "imageUrl": "/images/partner-yatharth-bisrakh.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-yatharth-greater-noida",
+      "description": "Logo for Yatharth Greater Noida Hospital",
+      "imageUrl": "/images/partner-yatharth-greater-noida.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-fortis-mohali",
+      "description": "Logo for Fortis Mohali Hospital",
+      "imageUrl": "/images/partner-fortis-mohali.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-accord-faridabad",
+      "description": "Logo for Accord Faridabad Hospital",
+      "imageUrl": "/images/partner-accord-faridabad.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-marengo-asia",
+      "description": "Logo for Marengo Asia Faridabad Hospital",
+      "imageUrl": "/images/partner-marengo-asia.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-indian-spinal",
+      "description": "Logo for Indian Spinal Injuries Centre",
+      "imageUrl": "/images/partner-indian-spinal.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-ck-birla",
+      "description": "Logo for CK Birla Hospital, Gurgaon",
+      "imageUrl": "/images/partner-ck-birla.png",
       "imageHint": "partner logo"
     }
   ]
