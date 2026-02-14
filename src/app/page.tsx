@@ -46,7 +46,7 @@ export default function Home() {
         {/* DESIGN ONE: Innovation & Animations */}
         <div className={cn(
           "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-          designIndex === 0 ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+          designIndex === 0 ? "opacity-100 z-20" : "opacity-0 z-0 pointer-events-none"
         )}>
           <section className="relative h-full flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-white">
             <div className="absolute inset-0 bg-[#f0f9fa]/80 z-0" />
@@ -81,10 +81,10 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="container relative z-30 mx-auto px-4 flex flex-col items-center">
+            <div className="container relative z-50 mx-auto px-4 flex flex-col items-center">
               <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-8 lg:gap-0">
-                {/* Image on left - Layered behind wave but above base background */}
-                <div className="hidden lg:block w-[300px] h-[450px] relative rounded-lg overflow-hidden shadow-2xl z-10 opacity-90 transition-all duration-700 hover:scale-105">
+                {/* Image on left */}
+                <div className="hidden lg:block w-[300px] h-[450px] relative rounded-lg overflow-hidden shadow-2xl z-10 opacity-90 transition-all duration-700 hover:scale-105 border-4 border-white">
                   <Image 
                     src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600"
                     alt="Wellness Illustration"
@@ -93,7 +93,7 @@ export default function Home() {
                   />
                 </div>
 
-                <div className="flex flex-col items-center space-y-8 max-w-2xl text-center lg:px-4 z-40">
+                <div className="flex flex-col items-center space-y-8 max-w-2xl text-center lg:px-4">
                   <h1 className="text-4xl md:text-7xl font-black tracking-tighter text-slate-800 leading-[1.1] uppercase">
                     EMPOWERING<br />
                     <span className="text-primary">WELLNESS</span><br />
@@ -103,8 +103,8 @@ export default function Home() {
                   <p className="text-xs md:text-lg text-slate-500 max-w-md mx-auto font-bold leading-relaxed">
                     Reliable pharmaceutical products for hospitals, clinics & healthcare professionals across India.
                   </p>
-                  <div className="pt-4 relative z-50">
-                    <Button asChild size="lg" className="rounded-full px-12 h-14 md:h-16 text-sm md:text-lg bg-primary text-white hover:bg-primary/90 shadow-2xl transition-all font-black uppercase tracking-widest border-4 border-white cursor-pointer">
+                  <div className="pt-4">
+                    <Button asChild size="lg" className="rounded-full px-12 h-14 md:h-16 text-sm md:text-lg bg-primary text-white hover:bg-primary/90 shadow-2xl transition-all font-black uppercase tracking-widest border-4 border-white cursor-pointer relative z-50">
                       <Link href="/products">
                         Explore Our Products
                       </Link>
@@ -112,7 +112,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Images on right - Layered similarly */}
+                {/* Images on right */}
                 <div className="hidden lg:flex flex-col gap-10 items-center justify-center z-10">
                   <div className="h-40 w-40 rounded-full border-8 border-white shadow-2xl overflow-hidden relative">
                     <Image 
@@ -134,7 +134,7 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Wave element - Layered to sit on top of back visuals but below text */}
+            {/* Wave element */}
             <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 z-20 pointer-events-none">
               <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-24 md:h-48 text-white fill-current">
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
@@ -146,7 +146,7 @@ export default function Home() {
         {/* DESIGN TWO: Institutional & Professional */}
         <div className={cn(
           "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-          designIndex === 1 ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+          designIndex === 1 ? "opacity-100 z-20" : "opacity-0 z-0 pointer-events-none"
         )}>
           <section className="relative h-full flex flex-col items-center justify-center px-4 overflow-hidden bg-slate-50">
             {/* Doctor Background */}
@@ -160,11 +160,11 @@ export default function Home() {
             </div>
 
             {/* Decorative Blobs */}
-            <div className="absolute top-10 right-0 w-1/3 h-1/2 opacity-20 hidden lg:block z-0">
+            <div className="absolute top-10 right-0 w-1/3 h-1/2 opacity-20 hidden lg:block z-0 pointer-events-none">
               <div className="w-full h-full bg-primary rounded-bl-[10rem] animate-pulse" />
             </div>
 
-            <div className="container relative z-30 mx-auto px-4 flex flex-col items-center lg:items-end text-center lg:text-right pb-40 md:pb-0">
+            <div className="container relative z-50 mx-auto px-4 flex flex-col items-center lg:items-end text-center lg:text-right pb-40 md:pb-0">
               <div className="max-w-3xl space-y-4">
                 <h1 className="text-4xl md:text-8xl font-black tracking-tight text-[#2d5a63] uppercase leading-none">
                   HEALTH PLUS<br />INNOVATION
@@ -176,7 +176,7 @@ export default function Home() {
                 {/* Circular Product Thumbnails */}
                 <div className="flex flex-wrap justify-center lg:justify-end gap-3 md:gap-6 pt-6 md:pt-12">
                   {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="h-14 w-14 md:h-24 md:w-24 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white hover:scale-110 transition-transform">
+                    <div key={i} className="h-14 w-14 md:h-24 md:w-24 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white hover:scale-110 transition-transform cursor-default">
                       <Image 
                         src={`https://picsum.photos/seed/hpi-p-${i}/200/200`}
                         alt="Product Preview"
@@ -188,8 +188,8 @@ export default function Home() {
                   ))}
                 </div>
 
-                <div className="pt-8 md:pt-10 relative z-50">
-                  <Button asChild size="lg" className="rounded-full px-10 h-12 md:h-14 text-xs md:text-md bg-[#2d5a63] text-white hover:bg-[#2d5a63]/90 shadow-xl font-bold uppercase tracking-widest border-2 border-white/20 cursor-pointer">
+                <div className="pt-8 md:pt-10">
+                  <Button asChild size="lg" className="rounded-full px-10 h-12 md:h-14 text-xs md:text-md bg-[#2d5a63] text-white hover:bg-[#2d5a63]/90 shadow-xl font-bold uppercase tracking-widest border-2 border-white/20 cursor-pointer relative z-50">
                     <Link href="/products">
                       Shop our Products
                     </Link>
