@@ -5,8 +5,10 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Target, Eye, ArrowRight, Heart, Pill, Plus, Activity, Star, Mail, Phone, MapPin } from 'lucide-react';
+import { Shield, Target, Eye, ArrowRight, Heart, Pill, Plus, Activity, Star, Mail, Phone, MapPin, ClipboardList } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { PRODUCTS } from '@/lib/products';
+import { Badge } from '@/components/ui/badge';
 
 export default function Home() {
   const [designIndex, setDesignIndex] = useState(0);
@@ -32,6 +34,9 @@ export default function Home() {
     { name: "Indian Spinal Injuries Centre", text: "Hospital Partner" },
     { name: "CK Birla Hospital, Gurgaon", text: "Hospital Partner" },
   ];
+
+  // Pick first 4 products for the featured section
+  const featuredProducts = PRODUCTS.slice(0, 4);
 
   return (
     <div className="flex flex-col w-full overflow-x-hidden">
@@ -147,7 +152,7 @@ export default function Home() {
                 src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1920"
                 alt="Doctor Background"
                 fill
-                className="object-cover object-left lg:translate-x-[-35%] lg:scale-110 transition-transform duration-700"
+                className="object-cover object-left lg:translate-x-[-55%] lg:scale-110 transition-transform duration-700"
               />
             </div>
 
@@ -161,17 +166,20 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-wrap justify-center lg:justify-end gap-3 md:gap-6 pt-6 md:pt-12">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="h-14 w-14 md:h-24 md:w-24 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white">
-                      <Image 
-                        src={`https://picsum.photos/seed/hpi-p-${i}/200/200`}
-                        alt="Product Showcase"
-                        width={200}
-                        height={200}
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
+                  {['p-germina', 'pegno-d3-nano', 'canq-300', 'herbvol-plus'].map((id, i) => {
+                    const prod = PRODUCTS.find(p => p.id === id);
+                    return (
+                      <div key={i} className="h-14 w-14 md:h-24 md:w-24 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white">
+                        <Image 
+                          src={prod?.imageUrl || `https://picsum.photos/seed/hpi-p-${i}/200/200`}
+                          alt="Product Showcase"
+                          width={200}
+                          height={200}
+                          className="object-cover"
+                        />
+                      </div>
+                    )
+                  })}
                 </div>
 
                 <div className="pt-8 md:pt-10 relative z-[60]">
@@ -200,13 +208,14 @@ export default function Home() {
         </div>
       </div>
 
+      {/* About Us Section */}
       <section className="py-24 bg-white relative z-10">
         <div className="container mx-auto px-4 md:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8 md:pl-16">
               <div className="space-y-3">
                 <h2 className="text-3xl md:text-4xl font-black text-slate-800 tracking-tight uppercase">
-                  Institutional <span className="text-primary">Commitment</span>
+                  About <span className="text-primary">Us</span>
                 </h2>
                 <div className="h-1.5 w-24 bg-primary rounded-full" />
               </div>
@@ -231,8 +240,62 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Products Section */}
+      <section className="py-24 bg-slate-50 relative z-10">
+        <div className="container mx-auto px-4 md:px-16">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div className="space-y-3">
+              <h2 className="text-3xl md:text-4xl font-black text-slate-800 tracking-tight uppercase">
+                Featured <span className="text-primary">Formulations</span>
+              </h2>
+              <div className="h-1.5 w-24 bg-primary rounded-full" />
+              <p className="text-slate-500 text-sm font-bold uppercase tracking-widest">High-quality professional pharmaceutical products</p>
+            </div>
+            <Link href="/products">
+              <Button variant="outline" className="rounded-full border-primary text-primary font-black uppercase tracking-widest text-[10px] h-12 px-8 hover:bg-primary hover:text-white transition-all">
+                View Full Catalog <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {featuredProducts.map((product) => (
+              <Link key={product.id} href={`/products/${product.id}`}>
+                <Card className="group flex flex-col h-full border-none shadow-xl rounded-[3rem] overflow-hidden hover:shadow-2xl hover:translate-y-[-8px] transition-all duration-500 bg-white">
+                  <div className="relative h-48 overflow-hidden bg-slate-100">
+                    <Image
+                      src={product.imageUrl}
+                      alt={product.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-white/95 text-primary border-none font-black px-4 py-1.5 rounded-full shadow-md text-[9px] uppercase tracking-widest">
+                        {product.category}
+                      </Badge>
+                    </div>
+                  </div>
+                  <CardContent className="p-6 flex flex-col flex-grow">
+                    <h3 className="font-black text-lg mb-2 line-clamp-1 text-slate-800 group-hover:text-primary transition-colors uppercase tracking-tight">{product.name}</h3>
+                    <p className="text-[10px] text-slate-500 mb-4 line-clamp-2 leading-relaxed font-medium">
+                      {product.description}
+                    </p>
+                    <div className="mt-auto flex items-center justify-between">
+                      <span className="text-[8px] font-black text-primary uppercase tracking-[0.2em]">Institutional Grade</span>
+                      <div className="h-10 w-10 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                        <ClipboardList className="h-4 w-4" />
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Hospital Network */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-black text-slate-800 mb-6 uppercase tracking-tight">Our Trusted Partner</h2>
           <p className="text-slate-500 text-[10px] md:text-sm font-black uppercase tracking-[0.3em] max-w-2xl mx-auto">Supporting India's prestigious healthcare centers.</p>
@@ -241,7 +304,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-16">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {partners.map((partner, index) => (
-              <div key={index} className="flex flex-col items-center p-6 bg-white rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 text-center space-y-4 group border border-slate-100">
+              <div key={index} className="flex flex-col items-center p-6 bg-slate-50 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 text-center space-y-4 group border border-slate-100">
                 <div className="relative h-16 w-24 md:h-20 md:w-32 opacity-70 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110">
                   <Image
                     src={`https://picsum.photos/seed/hpi-inst-${index}/400/200`}
