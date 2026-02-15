@@ -35,12 +35,12 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative h-[400px] w-full max-w-md mx-auto rounded-[3rem] overflow-hidden shadow-2xl border-8 border-slate-50">
+            <div className="relative h-[400px] w-full max-w-md mx-auto rounded-[3rem] overflow-hidden shadow-2xl border-8 border-slate-50 bg-white">
               <Image
                 src={getImage('about-lab-main')}
                 alt="Who We Are - HPI"
                 fill
-                className="object-cover"
+                className="object-contain"
                 data-ai-hint="pharmaceutical lab"
               />
             </div>
@@ -137,12 +137,12 @@ export default function AboutPage() {
               </div>
             </div>
             
-            <div className="order-1 lg:order-2 relative h-[450px] w-full rounded-[4rem] overflow-hidden shadow-2xl group border-4 border-slate-50">
+            <div className="order-1 lg:order-2 relative h-[450px] w-full rounded-[4rem] overflow-hidden shadow-2xl group border-4 border-slate-50 bg-white">
               <Image
                 src={getImage('about-quality-commitment')}
                 alt="Why Choose HPI"
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                className="object-contain"
                 data-ai-hint="quality commitment"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>

@@ -1,5 +1,4 @@
-# Firebase Studio
+# HealthPlus
 
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
+This website is made by Hardik Varshney.
+FrameWork Used : React.js , Next.js , tailwind

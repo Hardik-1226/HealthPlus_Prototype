@@ -15,19 +15,19 @@
     {
       "id": "hero-wellness-illustration",
       "description": "Wellness illustration for the first hero design (Design One)",
-      "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600",
+      "imageUrl": "/images/WellNess.png",
       "imageHint": "wellness illustration"
     },
     {
       "id": "hero-medical-professional",
       "description": "Circle image of a medical professional for Design One",
-      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dad99a01?auto=format&fit=crop&q=80&w=300",
+      "imageUrl": "/images/hero-medicle.png",
       "imageHint": "medical professional"
     },
     {
       "id": "hero-lab-research",
       "description": "Circle image of laboratory research for Design One",
-      "imageUrl": "https://images.unsplash.com/photo-1579152276532-535c21af1aa5?auto=format&fit=crop&q=80&w=400",
+      "imageUrl": "/images/hero-medicle2.png",
       "imageHint": "laboratory research"
     },
     {
@@ -39,85 +39,115 @@
     {
       "id": "about-lab-main",
       "description": "Main laboratory image for the About Us page",
-      "imageUrl": "https://images.unsplash.com/photo-1579152276532-535c21af1aa5?auto=format&fit=crop&q=80&w=800",
+      "imageUrl": "/images/About-us.png",
       "imageHint": "pharmaceutical lab"
     },
     {
       "id": "about-quality-commitment",
       "description": "Image representing quality pharmaceutical commitment used in About Us and Home",
-      "imageUrl": "https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800",
+      "imageUrl": "/images/About-us.png",
       "imageHint": "quality commitment"
     },
     {
       "id": "partner-logo-max-gurgaon",
       "description": "Logo for Max Gurgaon Hospital",
-      "imageUrl": "/images/partner-max-gurgaon.png",
+      "imageUrl": "/Hospitals/Max.png",
       "imageHint": "partner logo"
     },
     {
       "id": "partner-logo-max-blk",
       "description": "Logo for Max BLK Hospital",
-      "imageUrl": "/images/partner-max-blk.png",
+      "imageUrl": "/Hospitals/blk.png",
       "imageHint": "partner logo"
     },
     {
       "id": "partner-logo-max-saket",
       "description": "Logo for Max Saket Hospital",
-      "imageUrl": "/images/partner-max-saket.png",
+      "imageUrl": "/Hospitals/Max_Saket.png",
       "imageHint": "partner logo"
     },
     {
       "id": "partner-logo-yatharth-faridabad",
       "description": "Logo for Yatharth Faridabad Hospital",
-      "imageUrl": "/images/partner-yatharth-faridabad.png",
+      "imageUrl": "/Hospitals/Yatharth_Faridabad.png",
       "imageHint": "partner logo"
     },
     {
       "id": "partner-logo-yatharth-sector-110",
       "description": "Logo for Yatharth Sector 110 Hospital",
-      "imageUrl": "/images/partner-yatharth-sector-110.png",
+      "imageUrl": "/Hospitals/Yatharth_Noida.png",
       "imageHint": "partner logo"
     },
     {
       "id": "partner-logo-yatharth-bisrakh",
       "description": "Logo for Yatharth Bisrakh Hospital",
-      "imageUrl": "/images/partner-yatharth-bisrakh.png",
+      "imageUrl": "/Hospitals/Yatharth_Bisrakh.png",
       "imageHint": "partner logo"
     },
     {
       "id": "partner-logo-yatharth-greater-noida",
       "description": "Logo for Yatharth Greater Noida Hospital",
-      "imageUrl": "/images/partner-yatharth-greater-noida.png",
+      "imageUrl": "/Hospitals/Yatharth_Greater_Noida.png",
       "imageHint": "partner logo"
     },
     {
       "id": "partner-logo-fortis-mohali",
       "description": "Logo for Fortis Mohali Hospital",
-      "imageUrl": "/images/partner-fortis-mohali.png",
+      "imageUrl": "/Hospitals/Fortis_Mohali.png",
       "imageHint": "partner logo"
     },
     {
       "id": "partner-logo-accord-faridabad",
       "description": "Logo for Accord Faridabad Hospital",
-      "imageUrl": "/images/partner-accord-faridabad.png",
+      "imageUrl": "/Hospitals/Accord_Faridabad.png",
       "imageHint": "partner logo"
     },
     {
       "id": "partner-logo-marengo-asia",
       "description": "Logo for Marengo Asia Faridabad Hospital",
-      "imageUrl": "/images/partner-marengo-asia.png",
+      "imageUrl": "/Hospitals/Marengo.png",
       "imageHint": "partner logo"
     },
     {
       "id": "partner-logo-indian-spinal",
       "description": "Logo for Indian Spinal Injuries Centre",
-      "imageUrl": "/images/partner-indian-spinal.png",
+      "imageUrl": "/Hospitals/ISIC.png",
       "imageHint": "partner logo"
     },
     {
       "id": "partner-logo-ck-birla",
       "description": "Logo for CK Birla Hospital, Gurgaon",
-      "imageUrl": "/images/partner-ck-birla.png",
+      "imageUrl": "/Hospitals/Birla_Gurgaon.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-paras-gurugram",
+      "description": "Logo for Paras Hospitals, Gurugram",
+      "imageUrl": "/Hospitals/Paras_Gurugram.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-paras-panchkula",
+      "description": "Logo for Paras Hospitals, Panchkula",
+      "imageUrl": "/Hospitals/Paras_Panchkula.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-artemis-gurugram",
+      "description": "Logo for Artemis Hospitals, Gurugram",
+      "imageUrl": "/Hospitals/Artemis_Gurugram.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-fortis-ncr",
+      "description": "Logo for Fortis Hospitals, NCR",
+      "imageUrl": "/Hospitals/Fortis_NCR.png",
+      "imageHint": "partner logo"
+    },
+    {
+      "id": "partner-logo-manipal-ghaziabad",
+      "description": "Logo for Manipal Hospital, Ghaziabad",
+      "imageUrl": "/Hospitals/Manipal_Ghaziabad.png",
       "imageHint": "partner logo"
     }
   ]

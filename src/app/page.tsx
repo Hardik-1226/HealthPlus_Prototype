@@ -32,6 +32,11 @@ export default function Home() {
     { id: "partner-logo-yatharth-bisrakh", name: "Yatharth Bisrakh", text: "Hospital Partner" },
     { id: "partner-logo-yatharth-greater-noida", name: "Yatharth Greater Noida", text: "Hospital Partner" },
     { id: "partner-logo-fortis-mohali", name: "Fortis Mohali", text: "Hospital Partner" },
+    { id: "partner-logo-paras-gurugram", name: "Paras Hospitals - Gurugram", text: "Hospital Partner" },
+    { id: "partner-logo-paras-panchkula", name: "Paras Hospitals - Panchkula", text: "Hospital Partner" },
+    { id: "partner-logo-artemis-gurugram", name: "Artemis Hospitals - Gurugram", text: "Hospital Partner" },
+    { id: "partner-logo-fortis-ncr", name: "Fortis Hospitals - NCR", text: "Hospital Partner" },
+    { id: "partner-logo-manipal-ghaziabad", name: "Manipal Hospital - Ghaziabad", text: "Hospital Partner" },
     { id: "partner-logo-accord-faridabad", name: "Accord Faridabad", text: "Hospital Partner" },
     { id: "partner-logo-marengo-asia", name: "Marengo Asia Faridabad", text: "Hospital Partner" },
     { id: "partner-logo-indian-spinal", name: "Indian Spinal Injuries Centre", text: "Hospital Partner" },
@@ -115,7 +120,7 @@ export default function Home() {
                 src={getImage('hero-doctor-background')} 
                 alt="Doctor Background" 
                 fill 
-                className="object-cover object-left lg:translate-x-[-20%] lg:scale-105 transition-transform duration-700" 
+                className="object-cover object-center lg:scale-105 transition-transform duration-700" 
                 data-ai-hint="doctor background" 
               />
             </div>
@@ -165,8 +170,8 @@ export default function Home() {
                 <p>Our institutional network ensures that clinical-grade formulations are available where they are needed most, backed by professional ethics and technical support.</p>
               </div>
             </div>
-            <div className="relative h-[300px] md:h-[450px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-slate-50">
-              <Image src={getImage('about-quality-commitment')} alt="Quality Commitment" fill className="object-cover" data-ai-hint="quality commitment" />
+            <div className="relative h-[300px] md:h-[450px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-slate-50 bg-white">
+              <Image src={getImage('about-quality-commitment')} alt="Quality Commitment" fill className="object-contain" data-ai-hint="quality commitment" />
             </div>
           </div>
         </div>
