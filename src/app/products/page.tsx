@@ -79,7 +79,7 @@ function ProductsContent() {
                           src={product.imageUrl}
                           alt={product.name}
                           fill
-                          className="object-cover group-hover:scale-110 transition-transform duration-700"
+                          className="object-contain group-hover:scale-110 transition-transform duration-700"
                         />
                       </div>
                       <div className="p-6 text-center">
@@ -124,7 +124,7 @@ function ProductsContent() {
                     src={product.imageUrl}
                     alt={product.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-contain group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-white/95 text-primary border-none font-black px-4 py-1.5 rounded-full shadow-md text-[9px] uppercase tracking-widest">

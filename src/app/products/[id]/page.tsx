@@ -101,7 +101,7 @@ export default function ProductDetailsPage() {
               src={activeImage}
               alt={product.name}
               fill
-              className="object-cover"
+              className="object-contain"
               priority
             />
           </div>
@@ -117,7 +117,7 @@ export default function ProductDetailsPage() {
                   )}
                   onClick={() => setActiveImage(img)}
                 >
-                  <Image src={img} alt={`${product.name} view ${idx + 1}`} fill className="object-cover" />
+                  <Image src={img} alt={`${product.name} view ${idx + 1}`} fill className="object-contain" />
                 </div>
               ))}
             </div>
@@ -347,7 +347,7 @@ export default function ProductDetailsPage() {
                 <Card className="hover:shadow-xl transition-all duration-500 h-full border-none shadow-md rounded-[2rem] overflow-hidden group bg-white">
                   <CardContent className="p-0">
                     <div className="relative h-32 w-full overflow-hidden">
-                      <Image src={rel.imageUrl} alt={rel.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <Image src={rel.imageUrl} alt={rel.name} fill className="object-contain group-hover:scale-110 transition-transform duration-700" />
                     </div>
                     <div className="p-4">
                       <h3 className="font-bold text-slate-800 group-hover:text-primary transition-colors text-xs line-clamp-1 uppercase tracking-tight">{rel.name}</h3>

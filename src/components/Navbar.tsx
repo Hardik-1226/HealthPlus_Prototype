@@ -94,7 +94,7 @@ export const Navbar = () => {
             <Link href="#" target="_blank" className="hover:text-primary transition-colors">
               <Twitter className="h-4 w-4" />
             </Link>
-            <Link href="#" target="_blank" className="hover:text-primary transition-colors">
+            <Link href="https://www.instagram.com/health_plus_innovation?igsh=bG1kY2thOHJ4NG4w" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
               <Instagram className="h-4 w-4" />
             </Link>
           </div>
@@ -134,8 +134,10 @@ export const Navbar = () => {
                       {link.name}
                     </Link>
                   ))}
-                  <Button variant="outline" className="mt-6 gap-3 rounded-full border-primary/40 text-xs uppercase tracking-[0.2em] font-black h-14">
-                    <FileDown className="h-5 w-5" /> Download Brochure
+                  <Button variant="outline" asChild className="mt-6 gap-3 rounded-full border-primary/40 text-xs uppercase tracking-[0.2em] font-black h-14">
+                    <a href="/HPI%20TEMPLATE%202.pdf" target="_blank" rel="noopener noreferrer" download>
+                      <FileDown className="h-5 w-5" /> Download Brochure
+                    </a>
                   </Button>
                 </div>
               </SheetContent>
@@ -215,7 +217,7 @@ export const Navbar = () => {
                       onClick={() => handleSuggestionClick(p.id)}
                     >
                       <div className="h-10 w-10 relative rounded-xl bg-slate-100 overflow-hidden shrink-0">
-                        <Image src={p.imageUrl} alt={p.name} fill className="object-cover" />
+                        <Image src={p.imageUrl} alt={p.name} fill className="object-contain" />
                       </div>
                       <div className="flex-grow">
                         <p className="text-xs font-black text-slate-800 line-clamp-1 uppercase tracking-tight">{p.name}</p>
@@ -227,8 +229,10 @@ export const Navbar = () => {
               )}
             </div>
 
-            <Button variant="outline" className="hidden xl:flex gap-3 rounded-full border-slate-200 text-[10px] uppercase tracking-[0.2em] font-black h-12 hover:bg-slate-50 group">
-              <FileDown className="h-4 w-4 text-primary group-hover:scale-110 transition-transform" /> Brochure
+            <Button variant="outline" asChild className="hidden xl:flex gap-3 rounded-full border-slate-200 text-[10px] uppercase tracking-[0.2em] font-black h-12 hover:bg-slate-50 group">
+              <a href="/HPI%20TEMPLATE%202.pdf" target="_blank" rel="noopener noreferrer" download>
+                <FileDown className="h-4 w-4 text-primary group-hover:scale-110 transition-transform" /> Brochure
+              </a>
             </Button>
             
             <Link href="/cart">

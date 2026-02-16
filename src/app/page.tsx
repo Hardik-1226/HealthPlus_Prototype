@@ -72,8 +72,8 @@ export default function Home() {
 
             <div className="container relative z-30 mx-auto px-4 flex flex-col items-center">
               <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-8 lg:gap-0">
-                <div className="hidden lg:block w-[300px] h-[450px] relative rounded-lg overflow-hidden shadow-2xl z-0 opacity-90 border-4 border-white">
-                  <Image src={getImage('hero-wellness-illustration')} alt="Wellness Illustration" fill className="object-cover" data-ai-hint="wellness illustration" />
+                  <div className="hidden lg:block w-[300px] h-[450px] relative rounded-lg overflow-hidden shadow-2xl z-0 opacity-90 border-4 border-white">
+                  <Image src={getImage('hero-wellness-illustration')} alt="Wellness Illustration" fill className="object-contain" data-ai-hint="wellness illustration" />
                 </div>
 
                 <div className="flex flex-col items-center space-y-8 max-w-2xl text-center lg:px-4">
@@ -92,10 +92,10 @@ export default function Home() {
 
                 <div className="hidden lg:flex flex-col gap-10 items-center justify-center z-0">
                   <div className="h-40 w-40 rounded-full border-8 border-white shadow-2xl overflow-hidden relative">
-                    <Image src={getImage('hero-medical-professional')} alt="Medical Professional" fill className="object-cover" data-ai-hint="medical professional" />
+                    <Image src={getImage('hero-medical-professional')} alt="Medical Professional" fill className="object-cover object-center" data-ai-hint="medical professional" />
                   </div>
                   <div className="h-52 w-52 rounded-full border-8 border-white shadow-2xl overflow-hidden relative translate-x-12">
-                    <Image src={getImage('hero-lab-research')} alt="Laboratory Research" fill className="object-cover" data-ai-hint="laboratory research" />
+                    <Image src={getImage('hero-lab-research')} alt="Laboratory Research" fill className="object-cover object-center" data-ai-hint="laboratory research" />
                   </div>
                 </div>
               </div>

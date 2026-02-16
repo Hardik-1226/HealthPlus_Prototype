@@ -46,7 +46,11 @@ export const PRODUCTS: Product[] = [
     category: 'Gastrointestinal',
     description: 'Probiotic respules containing Bacillus Clausii to restore healthy gut flora and support digestive health during and after antibiotic treatment.',
     packSize: '10x5ml',
-    imageUrl: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=600',
+    imageUrl: '/Medicine%20Images/P_GERMINA_FRONT.jpg-removebg-preview.png',
+    images: [
+      '/Medicine%20Images/P_GERMINA_OPEN.jpg-removebg-preview.png',
+      '/Medicine%20Images/P_GERMINA_SIDE.jpg-removebg-preview.png'
+    ],
     composition: ['Bacillus Clausii - 2 Billion Spores (Respules)'],
     benefits: ['Restores gut flora', 'Relieves diarrhea', 'Supports immunity'],
     indications: ['Diarrhea', 'Post-antibiotic gut recovery', 'Dysbiosis'],
@@ -84,7 +88,10 @@ export const PRODUCTS: Product[] = [
     category: 'Respiratory Care',
     description: 'Natural wellness softgel capsules designed for inhalation or oral use to provide relief from nasal congestion and respiratory discomfort.',
     packSize: '1x10 cap',
-    imageUrl: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=600',
+    imageUrl: '/Medicine%20Images/Camphor.png',
+    images: [
+      '/Medicine%20Images/CamphorSide.png'
+    ],
     composition: [
       'Camphor',
       'Eucalyptol',
@@ -102,7 +109,7 @@ export const PRODUCTS: Product[] = [
     category: 'Gastrointestinal',
     description: 'Effective combination of a proton pump inhibitor and a prokinetic agent for the treatment of acid reflux, GERD, and associated nausea.',
     packSize: '1x15 cap',
-    imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600',
+    imageUrl: '/Medicine%20Images/Pantoprazole%20Ecopan-D.png',
     composition: ['Pantoprazole', 'Domperidone'],
     benefits: ['Reduces acidity', 'Stops nausea', 'Prevents heartburn'],
     indications: ['Acid reflux', 'GERD', 'Dyspepsia'],
@@ -115,7 +122,7 @@ export const PRODUCTS: Product[] = [
     category: 'Gastrointestinal',
     description: 'Standard strength Pantoprazole 40mg for the effective management of stomach ulcers, hyperacidity, and esophageal erosion.',
     packSize: '1x15 cap',
-    imageUrl: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=600',
+    imageUrl: '/Medicine%20Images/Pantoprazole%20Front.png',
     composition: ['Pantoprazole 40 mg'],
     benefits: ['Long-lasting relief', 'Heals stomach ulcers', 'Controls gastric acid'],
     indications: ['Peptic ulcers', 'Zollinger-Ellison syndrome', 'Hyperacidity'],
@@ -128,7 +135,7 @@ export const PRODUCTS: Product[] = [
     category: 'Nutraceuticals',
     description: 'High-quality Omega-3 fish oil supplement rich in EPA and DHA to support cardiovascular health, brain function, and joint mobility.',
     packSize: 'Pack of 30 caps',
-    imageUrl: 'https://images.unsplash.com/photo-1626716493137-b67fe9501e76?auto=format&fit=crop&q=80&w=600',
+    imageUrl: '/Medicine%20Images/HPI%20Omega.png',
     composition: ['Omega 3 fish oil (EPA+DHA)'],
     benefits: ['Supports heart health', 'Improves brain function', 'Reduces joint inflammation'],
     indications: ['High cholesterol', 'Cognitive support', 'Arthritis adjunct'],
@@ -141,7 +148,10 @@ export const PRODUCTS: Product[] = [
     category: 'Bone Health',
     description: 'Balanced formulation of Calcium and Vitamin D3 to ensure optimal bone mineral density and prevent bone-related disorders.',
     packSize: '1x15 cap',
-    imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600',
+    imageUrl: '/Medicine%20Images/Calcium%20Carbonate.png',
+    images: [
+      '/Medicine%20Images/Calcium%20Carbone%202.png'
+    ],
     composition: [
       'Calcium Carbonate 500mg',
       'Vitamin D3 250iu'
@@ -157,7 +167,10 @@ export const PRODUCTS: Product[] = [
     category: 'Antibiotics',
     description: 'Broad-spectrum cephalosporin antibiotic for the effective treatment of respiratory, urinary, and soft tissue bacterial infections.',
     packSize: '1x 10 tab',
-    imageUrl: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=600',
+    imageUrl: '/Medicine%20Images/Cefuroxime.png',
+    images: [
+      '/Medicine%20Images/Cefuroxime%202.png'
+    ],
     composition: ['Cefuroxime Axetil 500 mg'],
     benefits: ['Broad spectrum efficacy', 'High stability', 'Rapid recovery'],
     indications: ['Pneumonia', 'UTI', 'Skin infections', 'Sinusitis'],
