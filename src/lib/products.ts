@@ -117,6 +117,9 @@ export const PRODUCTS: Product[] = [
     description: 'Effective combination of a proton pump inhibitor and a prokinetic agent for the treatment of acid reflux, GERD, and associated nausea.',
     packSize: '1x15 cap',
     imageUrl: '/Medicine%20Images/Pantoprazole%20Ecopan-D.png',
+    images: [
+      '/Medicine%20Images/Pantropazole%20Ecopan_D%20side.png'
+    ],
     composition: ['Pantoprazole', 'Domperidone'],
     benefits: ['Reduces acidity', 'Stops nausea', 'Prevents heartburn'],
     indications: ['Acid reflux', 'GERD', 'Dyspepsia'],
@@ -130,6 +133,9 @@ export const PRODUCTS: Product[] = [
     description: 'Standard strength Pantoprazole 40mg for the effective management of stomach ulcers, hyperacidity, and esophageal erosion.',
     packSize: '1x15 cap',
     imageUrl: '/Medicine%20Images/Pantoprazole%20Front.png',
+    images: [
+      '/Medicine%20Images/Pantoprale.png'
+    ],
     composition: ['Pantoprazole 40 mg'],
     benefits: ['Long-lasting relief', 'Heals stomach ulcers', 'Controls gastric acid'],
     indications: ['Peptic ulcers', 'Zollinger-Ellison syndrome', 'Hyperacidity'],
