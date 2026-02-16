@@ -20,7 +20,11 @@ export const PRODUCTS: Product[] = [
     category: 'Vitamins & Supplements',
     description: 'High-concentration Vitamin D3 supplement in a convenient nano-shot format for rapid absorption and correction of Vitamin D deficiency.',
     packSize: '4x5ml',
-    imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600',
+    imageUrl: '/Medicine%20Images/MoreMedicineImg/Pegno%20D3.png',
+    images: [
+      '/Medicine%20Images/MoreMedicineImg/PegnoD3%20Side%20view.png',
+      '/Medicine%20Images/MoreMedicineImg/Pegno%20D3%20Side%20view%202.png'
+    ],
     composition: ['Vitamin D3 (Cholecalciferol) - 60,000 IU'],
     benefits: ['Supports bone health', 'Enhances immunity', 'Rapid absorption'],
     indications: ['Vitamin D deficiency', 'Osteoporosis', 'General weakness'],
@@ -33,7 +37,10 @@ export const PRODUCTS: Product[] = [
     category: 'Pediatric Care',
     description: 'Specially formulated Vitamin D3 drops for infants and children to support healthy growth and development of bones and teeth.',
     packSize: '15ml',
-    imageUrl: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=600',
+    imageUrl: '/Medicine%20Images/MoreMedicineImg/Pegno%20D3.png',
+    images: [
+      '/Medicine%20Images/MoreMedicineImg/PegnoD3%20Side%20view.png'
+    ],
     composition: ['Vitamin D3 (Cholecalciferol) - 800 IU'],
     benefits: ['Supports healthy growth', 'Safe for children', 'Easy administration'],
     indications: ['Vitamin D deficiency in infants', 'Rickets prevention'],
@@ -63,7 +70,7 @@ export const PRODUCTS: Product[] = [
     category: 'Nutraceuticals',
     description: 'Premium nutraceutical formulation for cardiac health, fertility, and cellular energy, featuring high-dose Coenzyme Q10 and antioxidants.',
     packSize: '1x10 cap',
-    imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600',
+    imageUrl: '/Medicine%20Images/MoreMedicineImg/Canq%20300.png',
     composition: [
       'Coenzyme Q10 (Ubidecarenone 300mg)',
       'Lycopene',
