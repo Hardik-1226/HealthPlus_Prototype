@@ -66,7 +66,7 @@ export const Footer = () => {
                 <Link href="#" className="h-8 w-8 bg-[#55acee] text-white rounded flex items-center justify-center hover:opacity-90 transition-opacity">
                   <Twitter className="h-4 w-4" />
                 </Link>
-                <Link href="#" className="h-8 w-8 bg-[#bc2a8d] text-white rounded flex items-center justify-center hover:opacity-90 transition-opacity">
+                <Link href="https://www.instagram.com/health_plus_innovation?igsh=bG1kY2thOHJ4NG4w" target="_blank" rel="noopener noreferrer" className="h-8 w-8 bg-[#bc2a8d] text-white rounded flex items-center justify-center hover:opacity-90 transition-opacity">
                   <Instagram className="h-4 w-4" />
                 </Link>
               </div>
