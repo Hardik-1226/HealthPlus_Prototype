@@ -50,11 +50,8 @@ export const PRODUCTS: Product[] = [
     category: 'Gastrointestinal',
     description: 'Probiotic respules containing Bacillus Clausii to restore healthy gut flora and support digestive health during and after antibiotic treatment.',
     packSize: '10x5ml',
-    imageUrl: '/Medicine%20Images/P_GERMINA_FRONT.jpg-removebg-preview.png',
-    images: [
-      '/Medicine%20Images/P_GERMINA_OPEN.jpg-removebg-preview.png',
-      '/Medicine%20Images/P_GERMINA_SIDE.jpg-removebg-preview.png'
-    ],
+    imageUrl: '/Medicine%20Images/P_GERMINIA.png',
+    
     composition: ['Bacillus Clausii - 2 Billion Spores (Respules)'],
     benefits: ['Restores gut flora', 'Relieves diarrhea', 'Supports immunity'],
     indications: ['Diarrhea', 'Post-antibiotic gut recovery', 'Dysbiosis'],
@@ -145,7 +142,7 @@ export const PRODUCTS: Product[] = [
     category: 'Nutraceuticals',
     description: 'High-quality Omega-3 fish oil supplement rich in EPA and DHA to support cardiovascular health, brain function, and joint mobility.',
     packSize: 'Pack of 30 caps',
-    imageUrl: '/Medicine%20Images/hpi%20omega.png',
+    imageUrl: '/Medicine%20Images/HpiOmega.png',
     composition: ['Omega 3 fish oil (EPA+DHA)'],
     benefits: ['Supports heart health', 'Improves brain function', 'Reduces joint inflammation'],
     indications: ['High cholesterol', 'Cognitive support', 'Arthritis adjunct'],
