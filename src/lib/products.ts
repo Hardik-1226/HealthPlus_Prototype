@@ -35,9 +35,7 @@ export const PRODUCTS: Product[] = [
     description: 'Specially formulated Vitamin D3 drops for infants and children to support healthy growth and development of bones and teeth.',
     packSize: '15ml',
     imageUrl: '/Medicine%20Images/pegno%20drops.png',
-    images: [
-      '/Medicine%20Images/Pegno%20D3%20Side%20view%202.png'
-    ],
+    
     composition: ['Vitamin D3 (Cholecalciferol) - 800 IU'],
     benefits: ['Supports healthy growth', 'Safe for children', 'Easy administration'],
     indications: ['Vitamin D deficiency in infants', 'Rickets prevention'],
@@ -111,9 +109,7 @@ export const PRODUCTS: Product[] = [
     description: 'Effective combination of a proton pump inhibitor and a prokinetic agent for the treatment of acid reflux, GERD, and associated nausea.',
     packSize: '1x15 cap',
     imageUrl: '/Medicine%20Images/ecopan%20d.png',
-    images: [
-      '/Medicine%20Images/Pantropazole%20Ecopan_D%20side.png'
-    ],
+    
     composition: ['Pantoprazole', 'Domperidone'],
     benefits: ['Reduces acidity', 'Stops nausea', 'Prevents heartburn'],
     indications: ['Acid reflux', 'GERD', 'Dyspepsia'],
@@ -127,9 +123,7 @@ export const PRODUCTS: Product[] = [
     description: 'Standard strength Pantoprazole 40mg for the effective management of stomach ulcers, hyperacidity, and esophageal erosion.',
     packSize: '1x15 cap',
     imageUrl: '/Medicine%20Images/eco%20pan%2040.png',
-    images: [
-      '/Medicine%20Images/Pantoprale.png'
-    ],
+    
     composition: ['Pantoprazole 40 mg'],
     benefits: ['Long-lasting relief', 'Heals stomach ulcers', 'Controls gastric acid'],
     indications: ['Peptic ulcers', 'Zollinger-Ellison syndrome', 'Hyperacidity'],
@@ -156,9 +150,7 @@ export const PRODUCTS: Product[] = [
     description: 'Balanced formulation of Calcium and Vitamin D3 to ensure optimal bone mineral density and prevent bone-related disorders.',
     packSize: '1x15 cap',
     imageUrl: '/Medicine%20Images/durocal%20tab.png',
-    images: [
-      '/Medicine%20Images/Calcium%20Carbone%202.png'
-    ],
+    
     composition: [
       'Calcium Carbonate 500mg',
       'Vitamin D3 250iu'
@@ -175,9 +167,7 @@ export const PRODUCTS: Product[] = [
     description: 'Broad-spectrum cephalosporin antibiotic for the effective treatment of respiratory, urinary, and soft tissue bacterial infections.',
     packSize: '1x 10 tab',
     imageUrl: '/Medicine%20Images/cefram.png',
-    images: [
-      '/Medicine%20Images/Cefuroxime%202.png'
-    ],
+    
     composition: ['Cefuroxime Axetil 500 mg'],
     benefits: ['Broad spectrum efficacy', 'High stability', 'Rapid recovery'],
     indications: ['Pneumonia', 'UTI', 'Skin infections', 'Sinusitis'],
